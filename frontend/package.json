@@ -2,6 +2,7 @@
   "name": "cinemetrics-pro-frontend",
   "version": "1.0.0",
   "description": "CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform - Frontend Application",
+  "homepage": "https://josephnjiru.github.io/cinemetrics-pro/",
   "private": false,
   "author": {
     "name": "Dr. Joseph N. Njiru",
@@ -10,7 +11,6 @@
     "credentials": "PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI"
   },
   "license": "MIT",
-  "homepage": "https://cinemetrics-pro.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/JosephNjiru/cinemetrics-pro.git",
@@ -25,14 +25,10 @@
     "oscar-awards",
     "data-visualization",
     "react",
-    "frontend",
+    "github-pages",
     "cinema-intelligence",
     "data-science",
-    "user-interface",
-    "responsive-design",
-    "progressive-web-app",
-    "advanced-analytics",
-    "film-industry"
+    "progressive-web-app"
   ],
   "scripts": {
     "start": "react-scripts start",
@@ -40,12 +36,13 @@
     "test": "react-scripts test --coverage --watchAll=false",
     "test:watch": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{js,jsx} --fix",
-    "lint:check": "eslint src/**/*.{js,jsx}",
-    "format": "prettier --write src/**/*.{js,jsx,css,md}",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "deploy:github": "npm run build && gh-pages -d build -m 'Deploy CineMetrics Pro v1.0.0'",
     "analyze": "npm run build && npx source-map-explorer 'build/static/js/*.js'",
     "lighthouse": "lhci autorun",
-    "serve": "serve -s build -l 3000"
+    "serve": "serve -s build -l 3000",
+    "postbuild": "echo 'Build completed for CineMetrics Pro by Dr. Joseph N. Njiru'"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.1.5",
@@ -71,6 +68,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "gh-pages": "^6.1.0",
     "lighthouse": "^11.4.0",
     "@lhci/cli": "^0.12.0",
     "prettier": "^3.1.1",
@@ -97,7 +95,8 @@
   "config": {
     "app_name": "CineMetrics Pro",
     "tagline": "Where Cinema Meets Advanced Data Science",
-    "api_version": "v1"
+    "api_version": "v1",
+    "deploy_branch": "gh-pages"
   },
   "funding": {
     "type": "github",
