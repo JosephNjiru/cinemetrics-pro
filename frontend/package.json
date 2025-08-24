@@ -1,0 +1,106 @@
+{
+  "name": "cinemetrics-pro-frontend",
+  "version": "1.0.0",
+  "description": "CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform - Frontend Application",
+  "private": false,
+  "author": {
+    "name": "Dr. Joseph N. Njiru",
+    "email": "joseph@cinemetrics-pro.com",
+    "url": "https://linkedin.com/in/joseph-n-njiru-phd",
+    "credentials": "PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI"
+  },
+  "license": "MIT",
+  "homepage": "https://cinemetrics-pro.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JosephNjiru/cinemetrics-pro.git",
+    "directory": "frontend"
+  },
+  "bugs": {
+    "url": "https://github.com/JosephNjiru/cinemetrics-pro/issues"
+  },
+  "keywords": [
+    "film-analytics",
+    "movie-database",
+    "oscar-awards",
+    "data-visualization",
+    "react",
+    "frontend",
+    "cinema-intelligence",
+    "data-science",
+    "user-interface",
+    "responsive-design",
+    "progressive-web-app",
+    "advanced-analytics",
+    "film-industry"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --coverage --watchAll=false",
+    "test:watch": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,jsx} --fix",
+    "lint:check": "eslint src/**/*.{js,jsx}",
+    "format": "prettier --write src/**/*.{js,jsx,css,md}",
+    "analyze": "npm run build && npx source-map-explorer 'build/static/js/*.js'",
+    "lighthouse": "lhci autorun",
+    "serve": "serve -s build -l 3000"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.5.1",
+    "axios": "^1.6.2",
+    "chart.js": "^4.4.0",
+    "chartjs-adapter-date-fns": "^3.0.0",
+    "framer-motion": "^10.16.16",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.11",
+    "react-helmet-async": "^2.0.4",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.20.1",
+    "react-scripts": "5.0.1",
+    "styled-components": "^6.1.6",
+    "web-vitals": "^3.5.0",
+    "workbox-window": "^7.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "lighthouse": "^11.4.0",
+    "@lhci/cli": "^0.12.0",
+    "prettier": "^3.1.1",
+    "serve": "^14.2.1",
+    "source-map-explorer": "^2.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:5000",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "config": {
+    "app_name": "CineMetrics Pro",
+    "tagline": "Where Cinema Meets Advanced Data Science",
+    "api_version": "v1"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/JosephNjiru"
+  }
+}
