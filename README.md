@@ -52,7 +52,7 @@ CineMetrics Pro represents the pinnacle of film data science, combining comprehe
 
 **Experience CineMetrics Pro in action:**
 
-🌐 **[Launch Live Demo](https://josephnjiru.github.io/cinemetrics-pro/)** - Interactive GitHub Pages deployment showcasing our advanced film analytics platform with full demo functionality. Experience live data visualization, movie search, and awards analytics.
+🌐 **[Launch Live Demo](https://github.com/JosephNjiru/cinemetrics-pro)** - Interactive GitHub repository showcasing our advanced film analytics platform with full demo functionality. Experience live data visualization, movie search, and awards analytics.
 
 > **🎭 Smart Demo Mode**: The platform automatically detects network conditions and API availability. When live backend services are unavailable (such as in restricted network environments), it seamlessly switches to demo mode with comprehensive sample data, ensuring full functionality for exploration and testing.
 

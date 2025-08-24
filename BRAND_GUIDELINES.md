@@ -75,7 +75,7 @@ To become the global standard for film data analytics, providing unprecedented i
 
 ### **Digital Platforms**
 - **GitHub Repository**: https://github.com/JosephNjiru/cinemetrics-pro
-- **GitHub Pages**: https://josephnjiru.github.io/cinemetrics-pro/
+- **Project Homepage**: https://cinemetrics-pro.com/
 - **Documentation**: Repository docs at /docs/
 - **LinkedIn**: Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science)
 

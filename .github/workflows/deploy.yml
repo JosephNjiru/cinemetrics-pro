@@ -71,5 +71,6 @@ jobs:
       
     - name: ✅ Deployment Success
       run: |
-        echo "🎬 CineMetrics Pro deployed successfully!"
-        echo "🌐 Live at: https://josephnjiru.github.io/cinemetrics-pro/"
+        echo "🎬 CineMetrics Pro build completed successfully!"
+        echo "🌐 Repository: https://github.com/JosephNjiru/cinemetrics-pro/"
+        echo "📁 Built files available in frontend/build directory"

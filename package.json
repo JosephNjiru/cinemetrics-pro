@@ -43,7 +43,8 @@
     "build": "cd frontend && npm run build",
     "deploy": "echo '🚀 Deploying CineMetrics Pro to production...'",
     "docs": "echo '📚 Visit: https://docs.cinemetrics-pro.com'",
-    "setup": "echo '⚙️ Setting up CineMetrics Pro...' && npm install && cd backend && npm install && cd ../frontend && npm install"
+    "setup": "echo '⚙️ Setting up CineMetrics Pro...' && npm install && cd backend && npm install && cd ../frontend && npm install",
+    "verify:urls": "node verify-no-blocked-urls.js"
   },
   "workspaces": [
     "backend",
