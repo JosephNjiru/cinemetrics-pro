@@ -3,7 +3,7 @@
 **"Where Cinema Meets Advanced Data Science - The Ultimate Film Analytics Experience"**
 
 [![GitHub Stars](https://img.shields.io/github/stars/JosephNjiru/cinemetrics-pro?style=for-the-badge&color=667eea)](https://github.com/JosephNjiru/cinemetrics-pro)
-[![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)](./LICENCE.md)
+[![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)](./LICENSE.md)
 [![API Status](https://img.shields.io/badge/API-Live-success?style=for-the-badge)](./docs/api/README.md)
 [![Documentation](https://img.shields.io/badge/Docs-Complete-blue?style=for-the-badge)](./docs/)
 [![Test Coverage](https://img.shields.io/badge/Coverage-95%25-success?style=for-the-badge)](https://github.com/JosephNjiru/cinemetrics-pro/actions)
@@ -60,10 +60,10 @@ CineMetrics Pro represents the pinnacle of film data science, combining comprehe
 
 | Resource | URL | Status |
 |----------|-----|--------|
-| **🌐 Live Platform** | [cinemetrics-pro.com](https://cinemetrics-pro.com) | ✅ Online |
-| **📚 API Documentation** | [docs.cinemetrics-pro.com](https://docs.cinemetrics-pro.com) | ✅ Complete |
-| **🔗 API Endpoint** | [api.cinemetrics-pro.com](https://api.cinemetrics-pro.com) | ✅ Active |
-| **📈 Analytics Dashboard** | [analytics.cinemetrics-pro.com](https://analytics.cinemetrics-pro.com) | ✅ Real-time |
+| **🌐 Live Platform** | [GitHub Pages](https://josephnjiru.github.io/cinemetrics-pro/) | ✅ Online |
+| **📚 Documentation** | [Repository Docs](https://github.com/JosephNjiru/cinemetrics-pro/tree/main/docs) | ✅ Complete |
+| **🔗 API Documentation** | [API Docs](https://github.com/JosephNjiru/cinemetrics-pro/blob/main/docs/API.md) | ✅ Active |
+| **📈 Repository** | [GitHub Repository](https://github.com/JosephNjiru/cinemetrics-pro) | ✅ Active |
 
 ---
 
@@ -388,22 +388,22 @@ We welcome contributions from the community! CineMetrics Pro is built with colla
 ## 📞 **Support & Community**
 
 ### **Get Help**
-- 📚 **Documentation**: [./docs/](./docs/)
-- 💬 **Discord Community**: [discord.gg/cinemetrics-pro](https://discord.gg/cinemetrics-pro)
-- ✉️ **Email Support**: support@cinemetrics-pro.com
+- 📚 **Documentation**: [Repository Docs](https://github.com/JosephNjiru/cinemetrics-pro/tree/main/docs)
+- 💬 **GitHub Discussions**: [Project Discussions](https://github.com/JosephNjiru/cinemetrics-pro/discussions)
+- ✉️ **Issues**: [GitHub Issues](https://github.com/JosephNjiru/cinemetrics-pro/issues)
 - 🐛 **Bug Reports**: [GitHub Issues](https://github.com/JosephNjiru/cinemetrics-pro/issues)
 
 ### **Stay Connected**
-- 🐦 **Twitter**: [@CineMetricsPro](https://twitter.com/CineMetricsPro)
-- 💼 **LinkedIn**: [CineMetrics Pro](https://linkedin.com/company/cinemetrics-pro)
-- 📺 **YouTube**: [CineMetrics Pro Channel](https://youtube.com/@cinemetrics-pro)
-- 📝 **Blog**: [blog.cinemetrics-pro.com](https://blog.cinemetrics-pro.com)
+- 🐦 **Twitter**: [@JosephNjiru](https://twitter.com/JosephNjiru)
+- 💼 **LinkedIn**: [Dr. Joseph N. Njiru](https://linkedin.com/in/joseph-n-njiru-phd)
+- 📺 **GitHub**: [JosephNjiru](https://github.com/JosephNjiru)
+- 📝 **Repository**: [CineMetrics Pro](https://github.com/JosephNjiru/cinemetrics-pro)
 
 ---
 
 ## 📄 **License**
 
-This project is licensed under the MIT License - see the [LICENSE](LICENCE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 ### **Open Source Commitment**
 CineMetrics Pro is proudly open source, contributing to the global developer community while maintaining enterprise-grade quality and security.

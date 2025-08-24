@@ -10,8 +10,9 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ErrorBoundary } from 'react-error-boundary';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 
-// Components (will be created later)
+// Components
 import BrandHeader from './components/BrandHeader';
+import Welcome from './pages/Welcome';
 import Dashboard from './pages/Dashboard';
 import Movies from './pages/Movies';
 import Awards from './pages/Awards';
@@ -145,33 +146,6 @@ const ContentWrapper = styled.main`
   padding-top: 80px; // Account for fixed header
   min-height: calc(100vh - 80px);
 `;
-
-// Welcome component for dashboard
-const Welcome = () => (
-  <div style={{ padding: '2rem', textAlign: 'center' }}>
-    <h1>🎬 Welcome to CineMetrics Pro</h1>
-    <h2>Advanced Film Intelligence & Awards Analytics Platform</h2>
-    <p>"Where Cinema Meets Advanced Data Science - The Ultimate Film Analytics Experience"</p>
-    <div style={{ marginTop: '2rem' }}>
-      <p><strong>Created by:</strong> Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science)</p>
-      <p>MEd, GD Stat, GC HigherEd, GC-GEOSPI</p>
-    </div>
-    <div style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', maxWidth: '800px', margin: '3rem auto 0' }}>
-      <div style={{ padding: '1.5rem', background: 'white', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-        <h3>🎭 50,000+ Movies</h3>
-        <p>Comprehensive film database with advanced analytics</p>
-      </div>
-      <div style={{ padding: '1.5rem', background: 'white', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-        <h3>🏆 95+ Years of Oscars</h3>
-        <p>Complete Academy Awards data and analytics</p>
-      </div>
-      <div style={{ padding: '1.5rem', background: 'white', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}>
-        <h3>🤖 ML-Powered Insights</h3>
-        <p>Machine learning enhanced search and predictions</p>
-      </div>
-    </div>
-  </div>
-);
 
 // Main App Component
 function App() {
