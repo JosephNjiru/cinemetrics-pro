@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet-async';
+import apiService from '../services/apiService';
 
 const DashboardContainer = styled.div`
   min-height: 100vh;
@@ -122,19 +123,39 @@ const Dashboard = () => {
     countries: '100+',
     accuracy: '91.7%'
   });
+  const [apiStatus, setApiStatus] = useState('checking');
 
   useEffect(() => {
-    // Animate numbers on load
-    const timer = setTimeout(() => {
-      setStats({
-        movies: '50,000+',
-        awards: '95+',
-        countries: '100+',
-        accuracy: '91.7%'
-      });
-    }, 500);
+    // Check API status and load dynamic stats if available
+    const loadDashboardData = async () => {
+      try {
+        const status = apiService.getStatus();
+        setApiStatus(status.mode);
+        
+        // In demo mode, use sample stats; in live mode, could fetch real stats
+        if (status.demoMode) {
+          setStats({
+            movies: '5',
+            awards: '5+',
+            countries: '3',
+            accuracy: '100%'
+          });
+        } else {
+          // Could fetch real stats from API here
+          setStats({
+            movies: '50,000+',
+            awards: '95+',
+            countries: '100+',
+            accuracy: '91.7%'
+          });
+        }
+      } catch (error) {
+        console.warn('Dashboard stats loading failed:', error);
+        setApiStatus('offline');
+      }
+    };
 
-    return () => clearTimeout(timer);
+    loadDashboardData();
   }, []);
 
   return (
@@ -148,7 +169,11 @@ const Dashboard = () => {
       <DashboardContainer>
         <Header>
           <Title>🎬 CineMetrics Pro</Title>
-          <Subtitle>Advanced Film Intelligence & Awards Analytics Platform</Subtitle>
+          <Subtitle>
+            Advanced Film Intelligence & Awards Analytics Platform
+            {apiStatus === 'demo' && ' (Demo Mode)'}
+            {apiStatus === 'live' && ' (Live Data)'}
+          </Subtitle>
           <CreatorInfo>Created by Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science)</CreatorInfo>
           <CreatorInfo>MEd, GD Stat, GC HigherEd, GC-GEOSPI</CreatorInfo>
         </Header>
