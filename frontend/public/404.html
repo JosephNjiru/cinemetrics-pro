@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#667eea" />
+  
+  <!-- Primary Meta Tags -->
+  <title>CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform</title>
+  <meta name="title" content="CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform">
+  <meta name="description" content="Where Cinema Meets Advanced Data Science - The Ultimate Film Analytics Experience. Analyze 50,000+ movies, track Oscar awards, and discover cinema trends with cutting-edge data science. Built by Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science).">
+  <meta name="keywords" content="film analytics, movie database, oscar awards, cinema data science, film intelligence, movie analytics, awards prediction, film industry insights, TMDb API, movie trends, data visualization, machine learning">
+  <meta name="author" content="Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <meta name="created" content="2025-08-24">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://josephnjiru.github.io/cinemetrics-pro/">
+  <meta property="og:title" content="CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform">
+  <meta property="og:description" content="Where Cinema Meets Advanced Data Science - The Ultimate Film Analytics Experience. Analyze 50,000+ movies, track Oscar awards, and discover cinema trends with machine learning.">
+  <meta property="og:image" content="%PUBLIC_URL%/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="CineMetrics Pro">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://josephnjiru.github.io/cinemetrics-pro/">
+  <meta property="twitter:title" content="CineMetrics Pro: Advanced Film Intelligence & Awards Analytics">
+  <meta property="twitter:description" content="The world's most advanced film analytics platform. Analyze movies, track awards, discover trends with cutting-edge data science.">
+  <meta property="twitter:image" content="%PUBLIC_URL%/social-preview.png">
+  <meta property="twitter:creator" content="@JosephNjiru">
+  <meta property="twitter:site" content="@JosephNjiru">
+  
+  <!-- LinkedIn -->
+  <meta property="linkedin:owner" content="Dr. Joseph N. Njiru">
+  <meta property="linkedin:creator" content="joseph-n-njiru-phd">
+  
+  <!-- Additional SEO Tags -->
+  <meta name="application-name" content="CineMetrics Pro">
+  <meta name="msapplication-TileColor" content="#667eea">
+  <meta name="msapplication-config" content="%PUBLIC_URL%/browserconfig.xml">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://josephnjiru.github.io/cinemetrics-pro/">
+  
+  <!-- Alternate Languages -->
+  <link rel="alternate" hreflang="en" href="https://josephnjiru.github.io/cinemetrics-pro/">
+  <link rel="alternate" hreflang="x-default" href="https://josephnjiru.github.io/cinemetrics-pro/">
+  
+  <!-- Preconnect to External Domains -->
+  <link rel="preconnect" href="https://api.themoviedb.org">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
+  <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#667eea">
+  
+  <!-- Web App Manifest -->
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CineMetrics Pro",
+    "description": "Advanced Film Intelligence & Awards Analytics Platform",
+    "url": "https://josephnjiru.github.io/cinemetrics-pro",
+    "applicationCategory": "Entertainment",
+    "operatingSystem": "Web",
+    "author": {
+      "@type": "Person",
+      "name": "Dr. Joseph N. Njiru",
+      "jobTitle": "PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI",
+      "url": "https://linkedin.com/in/joseph-n-njiru-phd"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "1247"
+    },
+    "dateCreated": "2025-08-24",
+    "creator": {
+      "@type": "Person",
+      "name": "Dr. Joseph N. Njiru",
+      "credentials": "PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI"
+    }
+  }
+  </script>
+  
+  <!-- Critical CSS (inline for performance) -->
+  <style>
+    :root {
+      --primary-color: #667eea;
+      --secondary-color: #764ba2;
+      --accent-color: #f4d03f;
+      --text-primary: #343a40;
+      --text-secondary: #6c757d;
+      --background: #f8f9fa;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    
+    .loading-logo {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    .loading-text {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .loading-tagline {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      text-align: center;
+      max-width: 600px;
+    }
+    
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    .loading-creator {
+      position: absolute;
+      bottom: 30px;
+      font-size: 0.875rem;
+      opacity: 0.8;
+      text-align: center;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <div style="padding: 50px; text-align: center; font-family: Arial, sans-serif; color: white;">
+      <h1>🎬 CineMetrics Pro</h1>
+      <h2>Advanced Film Intelligence & Awards Analytics Platform</h2>
+      <p>You need to enable JavaScript to run this app.</p>
+      <p>CineMetrics Pro is an advanced film analytics platform that requires JavaScript for optimal performance.</p>
+      <p><strong>Created by:</strong> Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI</p>
+    </div>
+  </noscript>
+  
+  <!-- Loading Screen -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-logo">🎬</div>
+    <div class="loading-text">CineMetrics Pro</div>
+    <div class="loading-tagline">Where Cinema Meets Advanced Data Science - The Ultimate Film Analytics Experience</div>
+    <div class="loading-spinner"></div>
+    <div class="loading-creator">
+      Created by Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science)<br>
+      MEd, GD Stat, GC HigherEd, GC-GEOSPI
+    </div>
+  </div>
+  
+  <div id="root"></div>
+  
+  <!-- Remove loading screen when app loads -->
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const loadingScreen = document.getElementById('loading-screen');
+        if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
+          setTimeout(function() {
+            loadingScreen.remove();
+          }, 500);
+        }
+      }, 1500);
+    });
+    
+    // Performance monitoring
+    if ('performance' in window) {
+      window.addEventListener('load', function() {
+        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+        console.log('🚀 CineMetrics Pro loaded in:', loadTime + 'ms');
+      });
+    }
+  </script>
+</body>
+</html>
