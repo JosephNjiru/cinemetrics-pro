@@ -1,0 +1,230 @@
+# CineMetrics Pro - Custom .gitignore
+# Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science)
+# Optimized for React + Node.js + Docker + MySQL + Redis
+
+# ====================================
+# NODE.JS & NPM
+# ====================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json (optional - include if you want)
+yarn.lock (optional - include if you want)
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ====================================
+# REACT BUILD & CACHE
+# ====================================
+build/
+dist/
+.cache/
+.parcel-cache/
+
+# Production builds
+/frontend/build
+/backend/dist
+
+# ====================================
+# ENVIRONMENT & SECRETS
+# ====================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example (keep this one)
+
+# API Keys & Secrets
+config/secrets.json
+src/config/keys.js
+secrets/
+*.key
+*.pem
+*.crt
+
+# ====================================
+# DATABASE
+# ====================================
+*.db
+*.sqlite
+*.sqlite3
+/database/data/
+/mysql_data/
+/redis_data/
+
+# Database backups
+*.sql.backup
+*.dump
+
+# ====================================
+# DOCKER & CONTAINERS
+# ====================================
+docker-compose.override.yml
+.docker/
+volumes/
+
+# Container data
+mysql_data/
+redis_data/
+grafana_data/
+prometheus_data/
+
+# ====================================
+# LOGS & MONITORING
+# ====================================
+logs/
+*.log
+/logs/
+/backend/logs/
+/nginx/logs/
+
+# Application logs
+error.log
+access.log
+combined.log
+app.log
+
+# ====================================
+# TESTING & COVERAGE
+# ====================================
+coverage/
+.nyc_output/
+test-results/
+playwright-report/
+test-results.xml
+coverage.xml
+
+# Jest
+jest_html_reporters.html
+jest-coverage/
+
+# ====================================
+# IDE & EDITOR FILES
+# ====================================
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json (if you want to share)
+
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ====================================
+# OPERATING SYSTEM
+# ====================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*
+
+# ====================================
+# TEMPORARY & CACHE FILES
+# ====================================
+tmp/
+temp/
+.tmp/
+.cache/
+*.tmp
+*.temp
+
+# ====================================
+# CERTIFICATES & SECURITY
+# ====================================
+ssl/
+certificates/
+*.pem
+*.key
+*.csr
+*.crt
+*.p12
+*.pfx
+
+# ====================================
+# DOCUMENTATION & ASSETS
+# ====================================
+# Keep documentation but ignore generated docs
+/docs/generated/
+*.pdf (if you don't want to track PDFs)
+
+# Large media files (add back specific ones you need)
+*.mov
+*.avi
+*.mkv
+*.mp4 (unless needed for demos)
+
+# ====================================
+# MISCELLANEOUS
+# ====================================
+.eslintcache
+.sass-cache/
+*.css.map
+*.js.map
+
+# Backup files
+*.backup
+*.bak
+*.orig
+
+# Archive files (unless needed)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ====================================
+# PROJECT-SPECIFIC
+# ====================================
+# CineMetrics Pro specific ignores
+/uploads/movies/
+/cache/tmdb/
+/data/exports/
+performance-reports/
+analytics-data/
+
+# Development tools
+.storybook-static/
+chromatic-build/
+
+# ====================================
+# KEEP THESE FILES (NEGATED)
+# ====================================
+!.env.example
+!.gitkeep
+!README.md
+!LICENSE
+!docker-compose.yml
+!docker-compose.prod.yml
+!Dockerfile
+!.github/
+!docs/
+!.vscode/extensions.json
