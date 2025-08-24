@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet-async';
+import apiService from '../services/apiService';
 
 const MoviesContainer = styled.div`
   min-height: 100vh;
@@ -177,86 +178,84 @@ const Movies = () => {
     year: 'all',
     rating: 'all'
   });
+  const [error, setError] = useState(null);
+  const [apiStatus, setApiStatus] = useState('checking');
 
-  // Sample movie data
+  // Load movies from API
   useEffect(() => {
-    const sampleMovies = [
-      {
-        id: 1,
-        title: 'The Shawshank Redemption',
-        year: 1994,
-        genre: 'Drama',
-        rating: 9.3,
-        country: 'USA',
-        description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.'
-      },
-      {
-        id: 2,
-        title: 'The Godfather',
-        year: 1972,
-        genre: 'Crime',
-        rating: 9.2,
-        country: 'USA',
-        description: 'The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.'
-      },
-      {
-        id: 3,
-        title: 'The Dark Knight',
-        year: 2008,
-        genre: 'Action',
-        rating: 9.0,
-        country: 'USA',
-        description: 'When the menace known as the Joker emerges, Batman must accept one of the greatest psychological and physical tests.'
-      },
-      {
-        id: 4,
-        title: 'Pulp Fiction',
-        year: 1994,
-        genre: 'Crime',
-        rating: 8.9,
-        country: 'USA',
-        description: 'The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.'
-      },
-      {
-        id: 5,
-        title: 'Forrest Gump',
-        year: 1994,
-        genre: 'Drama',
-        rating: 8.8,
-        country: 'USA',
-        description: 'The presidencies of Kennedy and Johnson through the eyes of an Alabama man with an IQ of 75.'
-      },
-      {
-        id: 6,
-        title: 'Inception',
-        year: 2010,
-        genre: 'Sci-Fi',
-        rating: 8.8,
-        country: 'USA',
-        description: 'A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea.'
+    const loadMovies = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        console.log('📽️ Loading movies data...');
+        const response = await apiService.getMovies(20);
+        
+        if (response && response.data) {
+          setMovies(response.data);
+          const status = apiService.getStatus();
+          setApiStatus(status.mode);
+          
+          if (status.demoMode) {
+            console.log('🎭 Movies loaded in demo mode');
+          } else {
+            console.log('✅ Movies loaded from live API');
+          }
+        } else {
+          throw new Error('No movie data received');
+        }
+      } catch (err) {
+        console.error('❌ Failed to load movies:', err);
+        setError('Failed to load movies. Please try again later.');
+        setApiStatus('offline');
+      } finally {
+        setLoading(false);
       }
-    ];
+    };
 
-    // Simulate API loading
-    setTimeout(() => {
-      setMovies(sampleMovies);
-      setLoading(false);
-    }, 1000);
+    loadMovies();
   }, []);
 
-  const handleSearch = () => {
-    // In a real app, this would trigger an API call
-    console.log('Searching for:', searchTerm, 'with filters:', filters);
-  };
+  // Search functionality
+  const handleSearch = async (term) => {
+    if (!term.trim()) {
+      // Reload all movies if search is cleared
+      const response = await apiService.getMovies(20);
+      setMovies(response.data || []);
+      return;
+    }
 
+    try {
+      setLoading(true);
+      const response = await apiService.searchMovies(term);
+      setMovies(response.data || []);
+    } catch (err) {
+      console.error('❌ Search failed:', err);
+      setError('Search failed. Please try again.');
+    } finally {
+      setLoading(false);
+    }
+  };
+  // Filter movies based on current filters and search term
   const filteredMovies = movies.filter(movie => {
-    const matchesSearch = movie.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesGenre = filters.genre === 'all' || movie.genre === filters.genre;
-    const matchesYear = filters.year === 'all' || movie.year.toString() === filters.year;
+    const matchesSearch = movie.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         (movie.director && movie.director.toLowerCase().includes(searchTerm.toLowerCase())) ||
+                         (movie.actors && movie.actors.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const matchesGenre = filters.genre === 'all' || 
+                        (movie.genre && movie.genre.toLowerCase().includes(filters.genre.toLowerCase()));
+    
+    const matchesYear = filters.year === 'all' || 
+                       movie.year.toString() === filters.year ||
+                       (filters.year === '2020' && movie.year >= 2020) ||
+                       (filters.year === '2010' && movie.year >= 2010 && movie.year < 2020) ||
+                       (filters.year === '2000' && movie.year >= 2000 && movie.year < 2010) ||
+                       (filters.year === '1990' && movie.year >= 1990 && movie.year < 2000);
+    
     const matchesRating = filters.rating === 'all' || 
-      (filters.rating === 'high' && movie.rating >= 9) ||
-      (filters.rating === 'medium' && movie.rating >= 8 && movie.rating < 9) ||
-      (filters.rating === 'low' && movie.rating < 8);
+      (filters.rating === 'high' && movie.avg_vote >= 9) ||
+      (filters.rating === 'medium' && movie.avg_vote >= 8 && movie.avg_vote < 9) ||
+      (filters.rating === 'low' && movie.avg_vote < 8);
     
     return matchesSearch && matchesGenre && matchesYear && matchesRating;
   });
@@ -272,7 +271,12 @@ const Movies = () => {
       <MoviesContainer>
         <Header>
           <Title>🎭 Movies Database</Title>
-          <Subtitle>Explore 50,000+ Movies with Advanced Analytics</Subtitle>
+          <Subtitle>
+            Explore Movies with Advanced Analytics 
+            {apiStatus === 'demo' && ' (Demo Mode - Sample Data)'}
+            {apiStatus === 'live' && ' (Live API Connected)'}
+            {apiStatus === 'offline' && ' (Offline Mode)'}
+          </Subtitle>
         </Header>
 
         <SearchSection>
@@ -282,9 +286,9 @@ const Movies = () => {
               placeholder="Search movies by title, director, or actor..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
+              onKeyPress={(e) => e.key === 'Enter' && handleSearch(searchTerm)}
             />
-            <SearchButton onClick={handleSearch}>
+            <SearchButton onClick={() => handleSearch(searchTerm)}>
               🔍 Search
             </SearchButton>
           </SearchBox>
@@ -326,22 +330,42 @@ const Movies = () => {
           </FilterGrid>
         </SearchSection>
 
+        {error && (
+          <div style={{
+            background: '#f8d7da',
+            color: '#721c24',
+            padding: '1rem',
+            borderRadius: '8px',
+            margin: '1rem 0',
+            textAlign: 'center'
+          }}>
+            ⚠️ {error}
+          </div>
+        )}
+
         {loading ? (
           <LoadingMessage>
             🎬 Loading movies from our comprehensive database...
           </LoadingMessage>
         ) : (
           <MoviesGrid>
-            {filteredMovies.map(movie => (
-              <MovieCard key={movie.id}>
+            {filteredMovies.map((movie, index) => (
+              <MovieCard key={movie.imdb_title_id || index}>
                 <MoviePoster>🎬</MoviePoster>
                 <MovieContent>
                   <MovieTitle>{movie.title}</MovieTitle>
                   <MovieMeta>
                     <span>{movie.year} • {movie.genre}</span>
-                    <MovieRating>⭐ {movie.rating}</MovieRating>
+                    <MovieRating>⭐ {movie.avg_vote}</MovieRating>
                   </MovieMeta>
-                  <MovieDescription>{movie.description}</MovieDescription>
+                  <MovieDescription>
+                    {movie.description || 'No description available.'}
+                  </MovieDescription>
+                  {movie.director && (
+                    <div style={{fontSize: '0.85rem', color: '#6c757d', marginTop: '0.5rem'}}>
+                      Director: {movie.director}
+                    </div>
+                  )}
                 </MovieContent>
               </MovieCard>
             ))}

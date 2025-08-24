@@ -118,7 +118,9 @@ const StatusDot = styled.span`
   background: ${props => {
     switch(props.status) {
       case 'healthy': return '#28a745';
+      case 'demo': return '#007bff';
       case 'unhealthy': return '#ffc107';
+      case 'checking': return '#6c757d';
       default: return '#dc3545';
     }
   }};
@@ -147,9 +149,11 @@ const BrandHeader = ({ apiStatus = 'checking' }) => {
   
   const getStatusText = (status) => {
     switch(status) {
-      case 'healthy': return 'API Online';
+      case 'healthy': return 'Live API';
+      case 'demo': return 'Demo Mode';
       case 'unhealthy': return 'API Issues';
-      default: return 'API Offline';
+      case 'checking': return 'Checking...';
+      default: return 'Offline';
     }
   };
   

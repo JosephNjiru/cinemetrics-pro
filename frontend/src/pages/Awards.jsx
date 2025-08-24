@@ -5,6 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet-async';
+import apiService from '../services/apiService';
 
 const AwardsContainer = styled.div`
   min-height: 100vh;
@@ -154,6 +155,7 @@ const Awards = () => {
   const [selectedYear, setSelectedYear] = useState('2024');
   const [awards, setAwards] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [apiStatus, setApiStatus] = useState('checking');
   const [analytics, setAnalytics] = useState({
     totalCeremonies: 96,
     predictionAccuracy: '91.7%',
@@ -161,77 +163,41 @@ const Awards = () => {
     yearsOfData: 95
   });
 
-  // Sample awards data
+  // Load awards data from API
   useEffect(() => {
-    const sampleAwards = [
-      {
-        category: 'Best Picture',
-        winner: {
-          title: 'Oppenheimer',
-          director: 'Christopher Nolan',
-          year: 2023,
-          predicted: true
-        },
-        nominees: [
-          'American Fiction',
-          'Anatomy of a Fall', 
-          'Barbie',
-          'The Holdovers',
-          'Killers of the Flower Moon',
-          'Maestro',
-          'Past Lives',
-          'Poor Things',
-          'The Zone of Interest'
-        ]
-      },
-      {
-        category: 'Best Director',
-        winner: {
-          title: 'Christopher Nolan - Oppenheimer',
-          year: 2023,
-          predicted: true
-        },
-        nominees: [
-          'Justine Triet - Anatomy of a Fall',
-          'Martin Scorsese - Killers of the Flower Moon',
-          'Jonathan Glazer - The Zone of Interest',
-          'Yorgos Lanthimos - Poor Things'
-        ]
-      },
-      {
-        category: 'Best Actor',
-        winner: {
-          title: 'Cillian Murphy - Oppenheimer',
-          year: 2023,
-          predicted: false
-        },
-        nominees: [
-          'Bradley Cooper - Maestro',
-          'Colman Domingo - Rustin',
-          'Paul Giamatti - The Holdovers',
-          'Jeffrey Wright - American Fiction'
-        ]
-      },
-      {
-        category: 'Best Actress',
-        winner: {
-          title: 'Emma Stone - Poor Things',
-          year: 2023,
-          predicted: true
-        },
-        nominees: [
-          'Annette Bening - Nyad',
-          'Lily Gladstone - Killers of the Flower Moon',
-          'Sandra Hüller - Anatomy of a Fall',
-          'Carey Mulligan - Maestro'
-        ]
+    const loadAwardsData = async () => {
+      try {
+        setLoading(true);
+        console.log('🏆 Loading awards data...');
+        
+        const response = await apiService.getAwards();
+        const status = apiService.getStatus();
+        setApiStatus(status.mode);
+        
+        if (response && response.data) {
+          setAwards(response.data);
+          
+          if (status.demoMode) {
+            console.log('🎭 Awards loaded in demo mode');
+            setAnalytics({
+              totalCeremonies: 1,
+              predictionAccuracy: '100%',
+              categoriesAnalyzed: 5,
+              yearsOfData: 1
+            });
+          } else {
+            console.log('✅ Awards loaded from live API');
+          }
+        }
+      } catch (error) {
+        console.error('❌ Failed to load awards:', error);
+        setApiStatus('offline');
+      } finally {
+        setLoading(false);
       }
-    ];
+    };
 
-    setTimeout(() => {
-      setAwards(sampleAwards);
-      setLoading(false);
-    }, 1000);
+    loadAwardsData();
   }, [selectedYear]);
 
   return (
@@ -245,7 +211,11 @@ const Awards = () => {
       <AwardsContainer>
         <Header>
           <Title>🏆 Awards Analytics</Title>
-          <Subtitle>95+ Years of Oscar Data with ML-Powered Predictions</Subtitle>
+          <Subtitle>
+            Oscar Data with Predictions
+            {apiStatus === 'demo' && ' (Demo Mode - Sample Data)'}
+            {apiStatus === 'live' && ' (Live Data)'}
+          </Subtitle>
         </Header>
 
         <AnalyticsGrid>
@@ -305,25 +275,30 @@ const Awards = () => {
             <CategorySection>
               <CategoryTitle>🏆 {selectedYear} Academy Awards</CategoryTitle>
               
-              {awards.map((award, index) => (
-                <WinnerCard key={index}>
-                  <WinnerTitle>
-                    <span>👑</span>
-                    {award.category}
-                    {award.winner.predicted && <PredictionBadge>Predicted ✓</PredictionBadge>}
-                  </WinnerTitle>
-                  <WinnerDetails>
-                    <strong>Winner:</strong> {award.winner.title}
-                  </WinnerDetails>
-                  
-                  <NomineesList>
-                    <strong>Other Nominees:</strong>
-                    {award.nominees.map((nominee, idx) => (
-                      <NomineeItem key={idx}>• {nominee}</NomineeItem>
-                    ))}
-                  </NomineesList>
-                </WinnerCard>
-              ))}
+              {awards.length > 0 ? (
+                awards.map((award, index) => (
+                  <WinnerCard key={index}>
+                    <WinnerTitle>
+                      <span>👑</span>
+                      {award.category}
+                      {award.winner && <PredictionBadge>Winner ✓</PredictionBadge>}
+                    </WinnerTitle>
+                    <WinnerDetails>
+                      <strong>Film:</strong> {award.film || award.name}
+                    </WinnerDetails>
+                    <WinnerDetails>
+                      <strong>Year:</strong> {award.year_film}
+                    </WinnerDetails>
+                    <WinnerDetails>
+                      <strong>Ceremony:</strong> {award.ceremony}th Academy Awards ({award.year_ceremony})
+                    </WinnerDetails>
+                  </WinnerCard>
+                ))
+              ) : (
+                <div style={{textAlign: 'center', padding: '2rem', color: '#6c757d'}}>
+                  No awards data available for {selectedYear}
+                </div>
+              )}
             </CategorySection>
           )}
         </AwardsSection>
