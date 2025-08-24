@@ -9,19 +9,27 @@ class ApiService {
     // Determine API URL based on environment
     this.baseURL = process.env.REACT_APP_API_URL || 
       (process.env.NODE_ENV === 'production' 
-        ? 'https://cinemetrics-pro-api-production.up.railway.app'  // Production API
+        ? ''  // No API in production, will use demo mode
         : 'http://localhost:5000'  // Development API
       );
     
     this.timeout = parseInt(process.env.REACT_APP_API_TIMEOUT) || 10000;
-    this.retryCount = parseInt(process.env.REACT_APP_API_RETRY_COUNT) || 3;
+    this.retryCount = parseInt(process.env.REACT_APP_API_RETRY_COUNT) || 2;
     this.isOnline = navigator.onLine;
-    this.demoMode = false;
+    
+    // Check if demo mode is forced (for production deployments without backend)
+    this.demoMode = process.env.REACT_APP_FORCE_DEMO_MODE === 'true' || !this.baseURL;
+    
+    if (this.demoMode) {
+      console.log('🎭 Demo mode enabled by configuration');
+    }
     
     // Listen for online/offline status
     window.addEventListener('online', () => {
       this.isOnline = true;
-      console.log('🌐 CineMetrics Pro: Back online - attempting to reconnect to API');
+      if (!process.env.REACT_APP_FORCE_DEMO_MODE) {
+        console.log('🌐 CineMetrics Pro: Back online - attempting to reconnect to API');
+      }
     });
     
     window.addEventListener('offline', () => {
