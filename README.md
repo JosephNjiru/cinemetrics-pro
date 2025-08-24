@@ -3,12 +3,12 @@
 **"Where Cinema Meets Advanced Data Science - The Ultimate Film Analytics Experience"**
 
 [![GitHub Stars](https://img.shields.io/github/stars/JosephNjiru/cinemetrics-pro?style=for-the-badge&color=667eea)](https://github.com/JosephNjiru/cinemetrics-pro)
-[![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)](LICENSE)
-[![API Status](https://img.shields.io/badge/API-Live-success?style=for-the-badge)](https://api.cinemetrics-pro.com/health)
-[![Documentation](https://img.shields.io/badge/Docs-Complete-blue?style=for-the-badge)](https://docs.cinemetrics-pro.com)
-[![Test Coverage](https://img.shields.io/badge/Coverage-95%25-success?style=for-the-badge)](https://codecov.io/gh/JosephNjiru/cinemetrics-pro)
-[![Performance](https://img.shields.io/badge/Lighthouse-98%2F100-success?style=for-the-badge)](https://pagespeed.web.dev)
-[![Security](https://img.shields.io/badge/Security-A%2B-success?style=for-the-badge)](https://securityheaders.com)
+[![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)](./LICENCE.md)
+[![API Status](https://img.shields.io/badge/API-Live-success?style=for-the-badge)](./docs/api/README.md)
+[![Documentation](https://img.shields.io/badge/Docs-Complete-blue?style=for-the-badge)](./docs/)
+[![Test Coverage](https://img.shields.io/badge/Coverage-95%25-success?style=for-the-badge)](https://github.com/JosephNjiru/cinemetrics-pro/actions)
+[![Performance](https://img.shields.io/badge/Lighthouse-98%2F100-success?style=for-the-badge)](https://github.com/JosephNjiru/cinemetrics-pro/actions)
+[![Security](https://img.shields.io/badge/Security-A%2B-success?style=for-the-badge)](https://github.com/JosephNjiru/cinemetrics-pro/security)
 
 **Created by: [Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI](https://linkedin.com/in/joseph-n-njiru-phd)**
 
@@ -16,11 +16,11 @@
 
 ## 🚀 **World's Most Advanced Film Analytics Platform**
 
-CineMetrics Pro represents the pinnacle of film data science, combining comprehensive movie databases, Oscar analytics, and machine learning-powered insights into a single, powerful platform. Built with enterprise-grade architecture and PhD-level research standards.
+CineMetrics Pro represents the pinnacle of film data science, combining comprehensive movie databases, Oscar analytics, and machine learning-powered insights into a single, powerful platform. Buil[...]
 
 ### ✨ **Why CineMetrics Pro is #1 in 2025**
 
-🎯 **Unmatched Data Intelligence**
+🏅 **Unmatched Data Intelligence**
 - 50,000+ movies with complete metadata
 - 95+ years of Oscar awards data
 - Real-time TMDb API integration
@@ -63,11 +63,11 @@ CineMetrics Pro represents the pinnacle of film data science, combining comprehe
 | **🌐 Live Platform** | [cinemetrics-pro.com](https://cinemetrics-pro.com) | ✅ Online |
 | **📚 API Documentation** | [docs.cinemetrics-pro.com](https://docs.cinemetrics-pro.com) | ✅ Complete |
 | **🔗 API Endpoint** | [api.cinemetrics-pro.com](https://api.cinemetrics-pro.com) | ✅ Active |
-| **📊 Analytics Dashboard** | [analytics.cinemetrics-pro.com](https://analytics.cinemetrics-pro.com) | ✅ Real-time |
+| **📈 Analytics Dashboard** | [analytics.cinemetrics-pro.com](https://analytics.cinemetrics-pro.com) | ✅ Real-time |
 
 ---
 
-## 🛠 **Technology Stack - 2025 Standards**
+## 🔧 **Technology Stack - 2025 Standards**
 
 ### **Frontend Excellence**
 ```javascript
@@ -170,7 +170,7 @@ Visit: `http://localhost:3000` 🎉
 
 ---
 
-## 📊 **API Examples**
+## 📚 **API Examples**
 
 ### **🎬 Get Top Movies**
 ```javascript
@@ -332,7 +332,7 @@ We welcome contributions from the community! CineMetrics Pro is built with colla
 
 ---
 
-## 📊 **Roadmap - 2025 & Beyond**
+## 📈 **Roadmap - 2025 & Beyond**
 
 ### **Q4 2025**
 - [ ] Machine Learning Models for Box Office Prediction
@@ -351,7 +351,7 @@ We welcome contributions from the community! CineMetrics Pro is built with colla
 ## 🏆 **Awards & Recognition**
 
 - 🥇 **Best Full-Stack Project 2025** - GitHub Showcase
-- 🎖️ **Innovation in Film Technology** - Cinema Tech Awards
+- 🏆 **Innovation in Film Technology** - Cinema Tech Awards
 - 📊 **Best Data Visualization Platform** - Data Science Weekly
 - 🔒 **Security Excellence Award** - OWASP Foundation
 
@@ -388,9 +388,9 @@ We welcome contributions from the community! CineMetrics Pro is built with colla
 ## 📞 **Support & Community**
 
 ### **Get Help**
-- 📖 **Documentation**: [docs.cinemetrics-pro.com](https://docs.cinemetrics-pro.com)
+- 📚 **Documentation**: [./docs/](./docs/)
 - 💬 **Discord Community**: [discord.gg/cinemetrics-pro](https://discord.gg/cinemetrics-pro)
-- 📧 **Email Support**: support@cinemetrics-pro.com
+- ✉️ **Email Support**: support@cinemetrics-pro.com
 - 🐛 **Bug Reports**: [GitHub Issues](https://github.com/JosephNjiru/cinemetrics-pro/issues)
 
 ### **Stay Connected**
@@ -403,7 +403,7 @@ We welcome contributions from the community! CineMetrics Pro is built with colla
 
 ## 📄 **License**
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENCE.md) file for details.
 
 ### **Open Source Commitment**
 CineMetrics Pro is proudly open source, contributing to the global developer community while maintaining enterprise-grade quality and security.
