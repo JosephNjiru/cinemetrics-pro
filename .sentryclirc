@@ -1,0 +1,20 @@
+# CineMetrics Pro - Sentry CLI Configuration (Disabled)
+# Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science)
+# This file disables Sentry CLI to prevent firewall blocks
+
+[defaults]
+url=https://sentry.io/
+org=disabled
+project=disabled
+
+[auth]
+token=disabled
+
+# Disable Sentry CLI functionality
+[cli]
+disable_update_check=true
+no_prompt=true
+
+# Disable telemetry
+[telemetry]
+enabled=false

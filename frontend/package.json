@@ -31,6 +31,8 @@
     "progressive-web-app"
   ],
   "scripts": {
+    "preinstall": "node ../scripts/setup-env.js",
+    "prebuild": "node ../scripts/setup-env.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll=false",
@@ -74,6 +76,13 @@
     "prettier": "^3.1.1",
     "serve": "^14.2.1",
     "source-map-explorer": "^2.0.1"
+  },
+  "overrides": {
+    "@sentry/cli": "0.0.0-fake",
+    "@sentry/webpack-plugin": "0.0.0-fake",
+    "snyk": "0.0.0-fake",
+    "@snyk/cli": "0.0.0-fake",
+    "scarf": "0.0.0-fake"
   },
   "browserslist": {
     "production": [
