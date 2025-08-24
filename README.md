@@ -2,14 +2,6 @@
 
 **"Where Cinema Meets Advanced Data Science - The Ultimate Film Analytics Experience"**
 
-[![GitHub Stars](https://img.shields.io/github/stars/JosephNjiru/cinemetrics-pro?style=for-the-badge&color=667eea)](https://github.com/JosephNjiru/cinemetrics-pro)
-[![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)](./LICENSE.md)
-[![API Status](https://img.shields.io/badge/API-Live-success?style=for-the-badge)](./docs/api/README.md)
-[![Documentation](https://img.shields.io/badge/Docs-Complete-blue?style=for-the-badge)](./docs/)
-[![Test Coverage](https://img.shields.io/badge/Coverage-95%25-success?style=for-the-badge)](https://github.com/JosephNjiru/cinemetrics-pro/actions)
-[![Performance](https://img.shields.io/badge/Lighthouse-98%2F100-success?style=for-the-badge)](https://github.com/JosephNjiru/cinemetrics-pro/actions)
-[![Security](https://img.shields.io/badge/Security-A%2B-success?style=for-the-badge)](https://github.com/JosephNjiru/cinemetrics-pro/security)
-
 **Created by: [Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI](https://linkedin.com/in/joseph-n-njiru-phd)**
 
 ---
@@ -56,14 +48,11 @@ CineMetrics Pro represents the pinnacle of film data science, combining comprehe
 
 ---
 
-## 🎬 **Live Demo & Links**
+## 🎬 **Live Demo**
 
-| Resource | URL | Status |
-|----------|-----|--------|
-| **🌐 Live Platform** | [GitHub Pages](https://josephnjiru.github.io/cinemetrics-pro/) | ✅ Online |
-| **📚 Documentation** | [Repository Docs](https://github.com/JosephNjiru/cinemetrics-pro/tree/main/docs) | ✅ Complete |
-| **🔗 API Documentation** | [API Docs](https://github.com/JosephNjiru/cinemetrics-pro/blob/main/docs/API.md) | ✅ Active |
-| **📈 Repository** | [GitHub Repository](https://github.com/JosephNjiru/cinemetrics-pro) | ✅ Active |
+**Experience CineMetrics Pro in action:**
+
+🌐 **[Launch Live Demo](https://josephnjiru.github.io/cinemetrics-pro/)** - Interactive GitHub Pages deployment where you can explore all features of our advanced film analytics platform.
 
 ---
 
