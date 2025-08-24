@@ -4,7 +4,7 @@
 
 [![GitHub Stars](https://img.shields.io/github/stars/JosephNjiru/cinemetrics-pro?style=for-the-badge&color=667eea)](https://github.com/JosephNjiru/cinemetrics-pro)
 [![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)](./LICENSE.md)
-[![API Status](https://img.shields.io/badge/API-Live-success?style=for-the-badge)](./docs/api/README.md)
+[![API Status](https://img.shields.io/badge/API-Live-success?style=for-the-badge)](./docs/API.md)
 [![Documentation](https://img.shields.io/badge/Docs-Complete-blue?style=for-the-badge)](./docs/)
 [![Test Coverage](https://img.shields.io/badge/Coverage-95%25-success?style=for-the-badge)](https://github.com/JosephNjiru/cinemetrics-pro/actions)
 [![Performance](https://img.shields.io/badge/Lighthouse-98%2F100-success?style=for-the-badge)](https://github.com/JosephNjiru/cinemetrics-pro/actions)
@@ -162,8 +162,8 @@ npm run seed
 # Development mode
 docker-compose up
 
-# Production mode
-docker-compose -f docker-compose.prod.yml up
+# Production mode (detached)
+docker-compose up -d
 ```
 
 Visit: `http://localhost:3000` 🎉
@@ -245,13 +245,13 @@ const searchResults = await fetch('/api/movies/search/advanced', {
 
 ## 📚 **Documentation**
 
-| Document | Purpose | Link |
-|----------|---------|------|
-| **API Reference** | Complete endpoint documentation | [📖 API Docs](docs/api/README.md) |
-| **Developer Guide** | Setup and development guide | [🛠 Dev Guide](docs/development.md) |
-| **Deployment Guide** | Production deployment | [🚀 Deploy Guide](docs/deployment.md) |
-| **Architecture Overview** | System design and components | [🏗 Architecture](docs/architecture.md) |
-| **Contributing Guide** | How to contribute | [🤝 Contributing](CONTRIBUTING.md) |
+| Document | Purpose | Link/Status |
+|----------|---------|-------------|
+| **API Reference** | Complete endpoint documentation | [📖 API Docs](docs/API.md) |
+| **Developer Guide** | Setup and development guide | Coming soon |
+| **Deployment Guide** | Production deployment | Coming soon |
+| **Architecture Overview** | System design and components | Coming soon |
+| **Contributing Guide** | How to contribute | Coming soon |
 | **Brand Guidelines** | Brand assets and usage | [🎨 Brand Guide](BRAND_GUIDELINES.md) |
 
 ---
@@ -292,8 +292,8 @@ npm audit && npm run security:scan
 # Quick start with Docker Compose
 docker-compose up -d
 
-# Production deployment
-docker-compose -f docker-compose.prod.yml up -d
+# Production deployment (detached)
+docker-compose up -d
 ```
 
 ### **☁️ Cloud Platforms**
@@ -389,7 +389,6 @@ We welcome contributions from the community! CineMetrics Pro is built with colla
 
 ### **Get Help**
 - 📚 **Documentation**: [Repository Docs](https://github.com/JosephNjiru/cinemetrics-pro/tree/main/docs)
-- 💬 **GitHub Discussions**: [Project Discussions](https://github.com/JosephNjiru/cinemetrics-pro/discussions)
 - ✉️ **Issues**: [GitHub Issues](https://github.com/JosephNjiru/cinemetrics-pro/issues)
 - 🐛 **Bug Reports**: [GitHub Issues](https://github.com/JosephNjiru/cinemetrics-pro/issues)
 
