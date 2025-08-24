@@ -19,6 +19,9 @@ import Awards from './pages/Awards';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorFallback from './components/ErrorFallback';
 
+// Import API service with smart fallback
+import apiService from './services/apiService';
+
 // Create React Query client
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -156,15 +159,25 @@ function App() {
   useEffect(() => {
     const checkApiHealth = async () => {
       try {
-        const response = await fetch('/api/health');
-        if (response.ok) {
-          setApiStatus('healthy');
+        console.log('🔍 CineMetrics Pro: Initializing API connection...');
+        const response = await apiService.checkHealth();
+        
+        if (response && response.status === 'healthy') {
+          const status = apiService.getStatus();
+          if (status.demoMode) {
+            setApiStatus('demo');
+            console.log('🎭 Running in demo mode with sample data');
+          } else {
+            setApiStatus('healthy');
+            console.log('✅ Connected to live API backend');
+          }
         } else {
-          setApiStatus('unhealthy');
+          setApiStatus('demo');
+          console.log('🎭 Using demo mode');
         }
       } catch (error) {
-        console.warn('API health check failed:', error.message);
-        setApiStatus('offline');
+        console.warn('⚠️ API initialization failed, using demo mode:', error.message);
+        setApiStatus('demo');
       } finally {
         // Simulate loading time for better UX
         setTimeout(() => setIsLoading(false), 1500);
