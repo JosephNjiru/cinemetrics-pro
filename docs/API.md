@@ -63,7 +63,6 @@ GET /api/movies
   }
 }
 ```
-
 ---
 
 ## 🏆 Awards Endpoints
