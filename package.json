@@ -1,0 +1,61 @@
+{
+  "name": "cinemetrics-pro",
+  "version": "1.0.0",
+  "description": "CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform - Where Cinema Meets Advanced Data Science",
+  "main": "index.js",
+  "private": false,
+  "author": {
+    "name": "Dr. Joseph N. Njiru",
+    "email": "joseph@cinemetrics-pro.com",
+    "url": "https://linkedin.com/in/joseph-n-njiru-phd",
+    "credentials": "PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI"
+  },
+  "license": "MIT",
+  "homepage": "https://cinemetrics-pro.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JosephNjiru/cinemetrics-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JosephNjiru/cinemetrics-pro/issues"
+  },
+  "keywords": [
+    "film-analytics",
+    "movie-database",
+    "oscar-awards",
+    "data-science",
+    "cinema-intelligence",
+    "full-stack",
+    "react",
+    "nodejs",
+    "machine-learning",
+    "advanced-analytics",
+    "phd-project",
+    "film-industry",
+    "tmdb-api",
+    "awards-prediction"
+  ],
+  "scripts": {
+    "dev": "echo '🎬 Starting CineMetrics Pro development environment...' && echo 'Navigate to frontend/ or backend/ directories for specific commands'",
+    "start": "docker-compose up",
+    "start:prod": "docker-compose -f docker-compose.prod.yml up -d",
+    "test": "echo '🧪 Running all tests...' && cd backend && npm test && cd ../frontend && npm test",
+    "build": "cd frontend && npm run build",
+    "deploy": "echo '🚀 Deploying CineMetrics Pro to production...'",
+    "docs": "echo '📚 Visit: https://docs.cinemetrics-pro.com'",
+    "setup": "echo '⚙️ Setting up CineMetrics Pro...' && npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "config": {
+    "platform": "CineMetrics Pro",
+    "version_name": "Advanced Film Intelligence Platform",
+    "api_version": "v1"
+  }
+}
