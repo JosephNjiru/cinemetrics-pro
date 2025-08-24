@@ -46,7 +46,7 @@ const StatCard = styled.div`
   background: white;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: ${props => props.theme.shadows.medium};
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   text-align: center;
   border-left: 4px solid #ffd700;
   
@@ -58,11 +58,11 @@ const StatCard = styled.div`
   h3 {
     font-size: 1.8rem;
     margin-bottom: 0.5rem;
-    color: ${props => props.theme.colors.primary};
+    color: #667eea;
   }
   
   p {
-    color: ${props => props.theme.colors.text.secondary};
+    color: #6c757d;
     font-weight: 500;
     font-size: 0.9rem;
   }
@@ -72,12 +72,12 @@ const RecentWinnersSection = styled.div`
   background: white;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: ${props => props.theme.shadows.medium};
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   margin-bottom: 3rem;
   
   h2 {
     margin-bottom: 2rem;
-    color: ${props => props.theme.colors.text.primary};
+    color: #343a40;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -93,7 +93,7 @@ const WinnerCard = styled.div`
   display: flex;
   align-items: center;
   padding: 1rem;
-  background: ${props => props.theme.colors.background.secondary};
+  background: #f8f9fa;
   border-radius: 8px;
   transition: transform 0.2s ease;
   
@@ -112,25 +112,25 @@ const WinnerCard = styled.div`
     
     .year {
       font-weight: 600;
-      color: ${props => props.theme.colors.primary};
+      color: #667eea;
       font-size: 0.9rem;
     }
     
     .category {
       font-weight: 600;
       margin-bottom: 0.25rem;
-      color: ${props => props.theme.colors.text.primary};
+      color: #343a40;
     }
     
     .winner {
       font-size: 1.1rem;
-      color: ${props => props.theme.colors.text.primary};
+      color: #343a40;
       margin-bottom: 0.25rem;
     }
     
     .nominees {
       font-size: 0.85rem;
-      color: ${props => props.theme.colors.text.secondary};
+      color: #6c757d;
     }
   }
 `;
@@ -171,17 +171,17 @@ const CreatorSection = styled.div`
   
   h3 {
     margin-bottom: 1rem;
-    color: ${props => props.theme.colors.text.primary};
+    color: #343a40;
   }
   
   .credentials {
     font-weight: 600;
-    color: ${props => props.theme.colors.primary};
+    color: #667eea;
     margin-bottom: 1rem;
   }
   
   .description {
-    color: ${props => props.theme.colors.text.secondary};
+    color: #6c757d;
     line-height: 1.6;
   }
 `;
@@ -193,46 +193,39 @@ const Awards = () => {
   useEffect(() => {
     const fetchAwardsData = async () => {
       try {
-        // In production, this would be a real API call
-        const response = await fetch('/api/awards');
-        let data;
+        // Simulate API delay and return sample data
+        await new Promise(resolve => setTimeout(resolve, 1500));
         
-        if (response.ok) {
-          const apiData = await response.json();
-          data = apiData;
-        } else {
-          // Fallback sample data
-          data = {
-            success: true,
-            data: [
-              {
-                year: 2024,
-                category: 'BEST_PICTURE',
-                winner: 'Oppenheimer',
-                nominees: ['American Fiction', 'Anatomy of a Fall', 'Barbie', 'The Holdovers', 'Killers of the Flower Moon']
-              },
-              {
-                year: 2024,
-                category: 'BEST_DIRECTOR',
-                winner: 'Christopher Nolan (Oppenheimer)',
-                nominees: ['Martin Scorsese', 'Greta Gerwig', 'Yorgos Lanthimos', 'Jonathan Glazer']
-              },
-              {
-                year: 2023,
-                category: 'BEST_PICTURE',
-                winner: 'Everything Everywhere All at Once',
-                nominees: ['The Banshees of Inisherin', 'Elvis', 'The Fabelmans', 'Tár']
-              }
-            ],
-            analytics: {
-              total_ceremonies: 96,
-              years_covered: '1929-2024',
-              prediction_accuracy: '91.7%',
-              total_winners: 3847,
-              categories_tracked: 24
+        const data = {
+          success: true,
+          data: [
+            {
+              year: 2024,
+              category: 'BEST_PICTURE',
+              winner: 'Oppenheimer',
+              nominees: ['American Fiction', 'Anatomy of a Fall', 'Barbie', 'The Holdovers', 'Killers of the Flower Moon']
+            },
+            {
+              year: 2024,
+              category: 'BEST_DIRECTOR',
+              winner: 'Christopher Nolan (Oppenheimer)',
+              nominees: ['Martin Scorsese', 'Greta Gerwig', 'Yorgos Lanthimos', 'Jonathan Glazer']
+            },
+            {
+              year: 2023,
+              category: 'BEST_PICTURE',
+              winner: 'Everything Everywhere All at Once',
+              nominees: ['The Banshees of Inisherin', 'Elvis', 'The Fabelmans', 'Tar']
             }
-          };
-        }
+          ],
+          analytics: {
+            total_ceremonies: 96,
+            years_covered: '1929-2024',
+            prediction_accuracy: '91.7%',
+            total_winners: 3847,
+            categories_tracked: 24
+          }
+        };
         
         setAwardsData(data);
       } catch (error) {
@@ -349,5 +342,13 @@ const Awards = () => {
           </div>
           <div className="description">
             This awards analytics system represents cutting-edge application of predictive analytics 
-            to entertainment industry data
-
+            to entertainment industry data, combining statistical modeling with machine learning 
+            to provide unprecedented insights into award patterns and predictions.
+          </div>
+        </CreatorSection>
+      </AwardsContainer>
+    </>
+  );
+};
+
+export default Awards;

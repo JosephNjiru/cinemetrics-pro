@@ -10,7 +10,10 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ErrorBoundary } from 'react-error-boundary';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 
-// Components (will be created later)
+// Import global styles
+import './index.css';
+
+// Components
 import BrandHeader from './components/BrandHeader';
 import Dashboard from './pages/Dashboard';
 import Movies from './pages/Movies';

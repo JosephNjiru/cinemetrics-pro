@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform
+# Created by Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science)
+# Site: https://josephnjiru.github.io/cinemetrics-pro/
+
+Sitemap: https://josephnjiru.github.io/cinemetrics-pro/sitemap.xml

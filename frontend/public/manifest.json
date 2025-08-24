@@ -1,0 +1,94 @@
+{
+  "short_name": "CineMetrics Pro",
+  "name": "CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform",
+  "description": "Where Cinema Meets Advanced Data Science - The Ultimate Film Analytics Experience",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#667eea",
+  "background_color": "#f8f9fa",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": [
+    "entertainment",
+    "productivity",
+    "education"
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot-mobile.png", 
+      "sizes": "375x812",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View analytics dashboard",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "icon-dashboard.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Movies Database",
+      "short_name": "Movies",
+      "description": "Search movie database",
+      "url": "/movies",
+      "icons": [
+        {
+          "src": "icon-movies.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Awards Analytics",
+      "short_name": "Awards",
+      "description": "Explore awards data",
+      "url": "/awards",
+      "icons": [
+        {
+          "src": "icon-awards.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}
