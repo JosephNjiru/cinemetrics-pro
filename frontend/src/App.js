@@ -205,7 +205,7 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <ThemeProvider theme={theme}>
             <GlobalStyle />
-            <Router>
+            <Router basename={process.env.NODE_ENV === 'production' ? '/cinemetrics-pro' : ''}>
               <AppContainer>
                 <BrandHeader apiStatus={apiStatus} />
                 <ContentWrapper>
