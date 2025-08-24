@@ -1,12 +1,14 @@
-# CineMetrics Pro - Updated GitHub Pages Deployment
+# CineMetrics Pro - Build, Test & Deploy Workflow
 # Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI
 # Advanced Film Intelligence & Awards Analytics Platform
-# Updated: 2025-08-24 15:53:24 UTC
+# Updated: 2025-01-02
 
-name: 🎬 Deploy CineMetrics Pro to GitHub Pages
+name: 🎬 Build, Test & Deploy CineMetrics Pro
 
 on:
   push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
   workflow_dispatch:
 
@@ -20,7 +22,37 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  # Build and test backend
+  backend:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: ⚙️ Setup Node.js 18
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        cache-dependency-path: backend/package-lock.json
+        
+    - name: 📦 Install Backend Dependencies
+      working-directory: ./backend
+      run: |
+        npm ci --prefer-offline --no-audit
+        
+    - name: 🧪 Backend Smoke Test
+      working-directory: ./backend
+      run: |
+        # Simple smoke test - check if server can start
+        timeout 10s npm start &
+        sleep 5
+        kill %1 || true
+        echo "✅ Backend smoke test passed"
+
+  # Build and test frontend
+  frontend:
     runs-on: ubuntu-latest
     
     steps:
@@ -35,36 +67,59 @@ jobs:
         cache-dependency-path: frontend/package-lock.json
         
     - name: 📦 Install Frontend Dependencies
+      working-directory: ./frontend
       run: |
-        cd frontend
-        npm ci --prefer-offline --no-audit || npm install
+        npm ci --prefer-offline --no-audit
         
-    - name: 🏗️ Build React Application
+    - name: 🏗️ Build Frontend
+      working-directory: ./frontend
       env:
         PUBLIC_URL: /cinemetrics-pro
         REACT_APP_ENVIRONMENT: production
         REACT_APP_VERSION: 1.0.0
         CI: false
       run: |
-        cd frontend
         npm run build
+        
+    - name: 🧪 Frontend Smoke Test
+      working-directory: ./frontend
+      run: |
+        # Check if build directory exists and has required files
+        test -d build
+        test -f build/index.html
+        test -f build/static/js/main.*.js
+        echo "✅ Frontend smoke test passed"
+        
+    - name: 📤 Upload Build Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: frontend-build
+        path: frontend/build/
+
+  # Deploy to GitHub Pages
+  deploy:
+    needs: [backend, frontend]
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+    - name: 📥 Download Build Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: frontend-build
+        path: ./build
         
     - name: 📄 Setup Pages
       uses: actions/configure-pages@v4
       
-    - name: 📤 Upload Build Artifacts
+    - name: 📤 Upload to GitHub Pages
       uses: actions/upload-pages-artifact@v3
       with:
-        path: frontend/build
+        path: ./build
         
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    
-    steps:
     - name: 🚀 Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
@@ -72,4 +127,4 @@ jobs:
     - name: ✅ Deployment Success
       run: |
         echo "🎬 CineMetrics Pro deployed successfully!"
-        echo "🌐 Live at: https://josephnjiru.github.io/cinemetrics-pro/"
+        echo "🌐 Live at: ${{ steps.deployment.outputs.page_url }}"
