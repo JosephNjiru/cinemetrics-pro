@@ -137,18 +137,17 @@ cd ../frontend && npm install
 
 ### **2. Environment Setup**
 ```bash
-# Copy environment templates
-cp backend/.env.example backend/.env
-cp frontend/.env.example frontend/.env
+# Copy environment template
+cp .env.example .env
 
 # Configure your environment variables
-# Database, Redis, API keys, etc.
+# Database passwords, API keys, etc.
 ```
 
 ### **3. Database Setup**
 ```bash
 # Start services with Docker
-docker-compose up -d mysql redis
+docker-compose up -d db redis
 
 # Run database migrations
 cd backend && npm run migrate
@@ -166,7 +165,9 @@ docker-compose up
 docker-compose -f docker-compose.prod.yml up
 ```
 
-Visit: `http://localhost:3000` 🎉
+Visit: `http://localhost` 🎉
+
+> **📚 For detailed setup instructions, see [docs/QUICKSTART.md](docs/QUICKSTART.md)**
 
 ---
 

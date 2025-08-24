@@ -2,8 +2,6 @@
 # Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI
 # Advanced Film Intelligence & Awards Analytics Platform
 
-version: '3.8'
-
 services:
   # MySQL Database
   db:

@@ -38,7 +38,7 @@ dist/
 .env.development.local
 .env.test.local
 .env.production.local
-.env.example (keep this one)
+# Keep .env.example
 
 # API Keys & Secrets
 config/secrets.json
