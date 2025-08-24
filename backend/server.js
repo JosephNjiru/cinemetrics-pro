@@ -39,7 +39,7 @@ app.use(helmet({
 // CORS configuration
 const corsOptions = {
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://cinemetrics-pro.com', 'https://www.cinemetrics-pro.com']
+    ? ['https://josephnjiru.github.io', 'https://josephnjiru.github.io/cinemetrics-pro']
     : ['http://localhost:3000', 'http://localhost:3001'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-API-Key'],

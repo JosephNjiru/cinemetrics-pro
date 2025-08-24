@@ -11,8 +11,8 @@
 
 CineMetrics Pro API provides comprehensive access to film data, awards analytics, and advanced cinema intelligence features. Our RESTful API serves over 50,000 movies and 95+ years of Academy Awards data with ML-enhanced search capabilities.
 
-**Base URL:** `https://api.cinemetrics-pro.com/v1`  
-**Documentation:** `https://docs.cinemetrics-pro.com`  
+**Base URL:** Development: `http://localhost:5000/api/v1` | Demo: `https://github.com/JosephNjiru/cinemetrics-pro`  
+**Documentation:** [Repository Documentation](https://github.com/JosephNjiru/cinemetrics-pro/blob/main/docs/)  
 
 ---
 
@@ -146,4 +146,4 @@ const data = await response.json();
 
 ---
 
-**For detailed documentation, visit:** https://docs.cinemetrics-pro.com
+**For detailed documentation, visit:** [CineMetrics Pro Documentation](https://github.com/JosephNjiru/cinemetrics-pro/tree/main/docs)

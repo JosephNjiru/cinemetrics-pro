@@ -74,10 +74,9 @@ To become the global standard for film data analytics, providing unprecedented i
 ## 🎯 **Brand Applications**
 
 ### **Digital Platforms**
-- **Website**: cinemetrics-pro.com
-- **API**: api.cinemetrics-pro.com
-- **Documentation**: docs.cinemetrics-pro.com
-- **GitHub**: github.com/JosephNjiru/cinemetrics-pro
+- **GitHub Repository**: https://github.com/JosephNjiru/cinemetrics-pro
+- **GitHub Pages**: https://josephnjiru.github.io/cinemetrics-pro/
+- **Documentation**: Repository docs at /docs/
 - **LinkedIn**: Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science)
 
 ### **File Naming Conventions**
@@ -86,8 +85,8 @@ To become the global standard for film data analytics, providing unprecedented i
 - **Styles**: `brand.css`, `cine-metrics-theme.css`
 
 ### **API Endpoints**
-- Base URL: `https://api.cinemetrics-pro.com/v1`
-- Documentation: `/docs/swagger`
+- Base URL (Development): `http://localhost:5000/api/v1`
+- Documentation: Repository `/docs/API.md`
 - Health Check: `/health`
 
 ---
