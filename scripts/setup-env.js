@@ -11,6 +11,8 @@
 // Disable external services before build process starts
 process.env.SNYK_TOKEN = 'false';
 process.env.DISABLE_SCARF = 'true';
+process.env.SCARF_ANALYTICS = 'false';
+process.env.SCARF_DISABLE = 'true';
 process.env.SENTRY_DISABLE = 'true';
 process.env.SENTRY_DSN = '';
 process.env.DISABLE_OPENCOLLECTIVE = 'true';

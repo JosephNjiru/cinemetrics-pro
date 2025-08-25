@@ -36,8 +36,8 @@
     "awards-prediction"
   ],
   "scripts": {
-    "preinstall": "node ./scripts/setup-env.js",
-    "prebuild": "node ./scripts/setup-env.js",
+    "preinstall": "node ./scripts/setup-env.js && node ./scripts/block-phantom-scripts.js",
+    "prebuild": "node ./scripts/setup-env.js && node ./scripts/block-phantom-scripts.js",
     "dev": "echo '🎬 Starting CineMetrics Pro development environment...' && echo 'Navigate to frontend/ or backend/ directories for specific commands'",
     "start": "docker-compose up",
     "start:prod": "docker-compose -f docker-compose.prod.yml up -d",
@@ -48,7 +48,8 @@
     "setup": "echo '⚙️ Setting up CineMetrics Pro...' && npm install && cd backend && npm install && cd ../frontend && npm install",
     "verify:urls": "node verify-no-blocked-urls.js",
     "mock:services": "node ./scripts/mock-services.js",
-    "setup:env": "node ./scripts/setup-env.js"
+    "setup:env": "node ./scripts/setup-env.js",
+    "block:phantoms": "node ./scripts/block-phantom-scripts.js"
   },
   "workspaces": [
     "backend",

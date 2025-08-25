@@ -30,12 +30,22 @@ The CineMetrics Pro application was blocked by firewall rules that prevented acc
   ```
   fund=false
   audit=false
+  scarf=false
+  disable-scarf=true
+  SCARF_ANALYTICS=false
+  DISABLE_SCARF=true
   ```
 - **Effect**: Prevents packages from making calls to analytics services like scarf.sh
 
-### 4. Deployment Updates
+### 4. Phantom Script Blocking
+- **Added**: `scripts/block-phantom-scripts.js` to prevent execution of analytics scripts
+- **Blocks**: `report.js`, `analytics.js`, `telemetry.js`, `scarf.js`
+- **Effect**: Automatically replaces any phantom scripts with firewall-compliant no-op versions
+
+### 5. Deployment Updates
 - **Updated**: GitHub workflow to indicate build completion rather than live deployment
 - **Changed**: From GitHub Pages deployment to repository-based hosting
+- **Enhanced**: CI/CD environment variables for comprehensive scarf.sh blocking
 
 ## Verification Tools
 
@@ -47,6 +57,19 @@ npm run verify:urls
 ```
 
 This script checks all project files for references to blocked domains and provides a clean report.
+
+### Phantom Script Blocking
+A phantom script blocker (`scripts/block-phantom-scripts.js`) prevents execution of analytics scripts:
+
+```bash
+npm run block:phantoms
+```
+
+This script:
+- Scans for phantom analytics scripts (`report.js`, `analytics.js`, etc.)
+- Replaces them with firewall-compliant no-op versions
+- Activates enhanced blocking in CI environments
+- Provides real-time protection against analytics script creation
 
 ### Build Testing
 Both frontend and backend builds have been tested successfully:

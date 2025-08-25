@@ -37,8 +37,11 @@ jobs:
     - name: 🔧 Setup Environment (Disable External Services)
       run: |
         node ./scripts/setup-env.js
+        node ./scripts/block-phantom-scripts.js
         echo "SNYK_TOKEN=false" >> $GITHUB_ENV
         echo "DISABLE_SCARF=true" >> $GITHUB_ENV
+        echo "SCARF_ANALYTICS=false" >> $GITHUB_ENV
+        echo "SCARF_DISABLE=true" >> $GITHUB_ENV
         echo "SENTRY_DISABLE=true" >> $GITHUB_ENV
         echo "DISABLE_OPENCOLLECTIVE=true" >> $GITHUB_ENV
         
@@ -46,6 +49,8 @@ jobs:
       env:
         SNYK_TOKEN: false
         DISABLE_SCARF: true
+        SCARF_ANALYTICS: false
+        SCARF_DISABLE: true
         SENTRY_DISABLE: true
         DISABLE_OPENCOLLECTIVE: true
         npm_config_fund: false
@@ -62,6 +67,8 @@ jobs:
         CI: false
         SNYK_TOKEN: false
         DISABLE_SCARF: true
+        SCARF_ANALYTICS: false
+        SCARF_DISABLE: true
         SENTRY_DISABLE: true
         DISABLE_SENTRY: true
         DISABLE_OPENCOLLECTIVE: true
