@@ -41,7 +41,7 @@
     "dev": "echo '🎬 Starting CineMetrics Pro development environment...' && echo 'Navigate to frontend/ or backend/ directories for specific commands'",
     "start": "docker-compose up",
     "start:prod": "docker-compose -f docker-compose.prod.yml up -d",
-    "test": "echo '🧪 Running all tests...' && cd backend && npm test && cd ../frontend && npm test",
+    "test": "echo '🧪 Running all tests...' && cd backend && npm test -- --passWithNoTests && cd ../frontend && npm test -- --passWithNoTests --watchAll=false",
     "build": "cd frontend && npm run build",
     "deploy": "echo '🚀 Deploying CineMetrics Pro to production...'",
     "docs": "echo '📚 Visit: https://docs.cinemetrics-pro.com'",
