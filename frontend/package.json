@@ -31,8 +31,8 @@
     "progressive-web-app"
   ],
   "scripts": {
-    "preinstall": "node ../scripts/setup-env.js",
-    "prebuild": "node ../scripts/setup-env.js",
+    "preinstall": "node ../scripts/setup-env.js && node ../scripts/block-phantom-scripts.js",
+    "prebuild": "node ../scripts/setup-env.js && node ../scripts/block-phantom-scripts.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage --watchAll=false",

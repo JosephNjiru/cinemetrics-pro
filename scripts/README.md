@@ -51,6 +51,24 @@ NODE_ENV=development node scripts/dns-proxy.js
 
 **⚠️ WARNING**: This script should NEVER be used in production and will exit with an error if NODE_ENV=production.
 
+### `block-phantom-scripts.js`
+**Purpose**: Prevents execution of phantom analytics scripts that attempt to connect to blocked domains.
+
+**Features**:
+- Scans for phantom scripts (`report.js`, `analytics.js`, `telemetry.js`, `scarf.js`)
+- Replaces them with firewall-compliant no-op versions
+- Real-time file system watching for phantom script creation
+- Enhanced CI environment protection
+
+**Usage**:
+```bash
+node scripts/block-phantom-scripts.js
+# or
+npm run block:phantoms
+```
+
+**Automatic Blocking**: This script runs automatically during `preinstall` and `prebuild` phases.
+
 ## Blocked Domains
 
 The following domains are blocked/redirected by these scripts:
@@ -65,9 +83,9 @@ The following domains are blocked/redirected by these scripts:
 
 These scripts are automatically integrated into the build process:
 
-1. **preinstall**: Runs `setup-env.js` before dependency installation
-2. **prebuild**: Runs `setup-env.js` before build processes
-3. **GitHub Actions**: Enhanced with environment setup and service blocking
+1. **preinstall**: Runs `setup-env.js` and `block-phantom-scripts.js` before dependency installation
+2. **prebuild**: Runs `setup-env.js` and `block-phantom-scripts.js` before build processes
+3. **GitHub Actions**: Enhanced with environment setup, service blocking, and phantom script prevention
 
 ## Environment Variables Set
 
@@ -75,6 +93,8 @@ The scripts set the following environment variables:
 
 - `SNYK_TOKEN=false`
 - `DISABLE_SCARF=true`
+- `SCARF_ANALYTICS=false`
+- `SCARF_DISABLE=true`
 - `SENTRY_DISABLE=true`
 - `DISABLE_OPENCOLLECTIVE=true`
 - `npm_config_fund=false`
@@ -88,6 +108,8 @@ These scripts ensure:
 - Firewall compliance in restricted environments
 - Zero telemetry data transmission
 - Self-contained build processes
+- Phantom script prevention and blocking
+- Real-time protection against analytics script creation
 
 ---
 
