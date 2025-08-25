@@ -45,7 +45,12 @@ function searchFiles(dir, extensions = ['.js', '.json', '.html', '.md', '.yml', 
         traverse(fullPath);
       } else if (extensions.some(ext => item.endsWith(ext))) {
         // Skip the verification script itself and documentation about the fix
-        if (item === 'verify-no-blocked-urls.js' || fullPath.includes('FIREWALL_FIX.md')) {
+        // Skip dns-proxy.js as it legitimately contains blocked domains for blocking purposes
+        // Skip scripts/README.md as it documents the blocked domains
+        if (item === 'verify-no-blocked-urls.js' || 
+            fullPath.includes('FIREWALL_FIX.md') ||
+            fullPath.includes('dns-proxy.js') ||
+            fullPath.includes('scripts/README.md')) {
           continue;
         }
         results.push(fullPath);

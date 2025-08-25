@@ -34,10 +34,25 @@ jobs:
         cache: 'npm'
         cache-dependency-path: frontend/package-lock.json
         
+    - name: 🔧 Setup Environment (Disable External Services)
+      run: |
+        node ./scripts/setup-env.js
+        echo "SNYK_TOKEN=false" >> $GITHUB_ENV
+        echo "DISABLE_SCARF=true" >> $GITHUB_ENV
+        echo "SENTRY_DISABLE=true" >> $GITHUB_ENV
+        echo "DISABLE_OPENCOLLECTIVE=true" >> $GITHUB_ENV
+        
     - name: 📦 Install Frontend Dependencies
+      env:
+        SNYK_TOKEN: false
+        DISABLE_SCARF: true
+        SENTRY_DISABLE: true
+        DISABLE_OPENCOLLECTIVE: true
+        npm_config_fund: false
+        npm_config_audit: false
       run: |
         cd frontend
-        npm ci --prefer-offline --no-audit || npm install
+        npm ci --prefer-offline --no-audit --no-fund || npm install --no-audit --no-fund
         
     - name: 🏗️ Build React Application
       env:
@@ -45,6 +60,13 @@ jobs:
         REACT_APP_ENVIRONMENT: production
         REACT_APP_VERSION: 1.0.0
         CI: false
+        SNYK_TOKEN: false
+        DISABLE_SCARF: true
+        SENTRY_DISABLE: true
+        DISABLE_SENTRY: true
+        DISABLE_OPENCOLLECTIVE: true
+        npm_config_fund: false
+        npm_config_audit: false
       run: |
         cd frontend
         npm run build
