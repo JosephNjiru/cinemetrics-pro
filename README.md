@@ -242,11 +242,9 @@ const searchResults = await fetch('/api/movies/search/advanced', {
 
 | Document | Purpose | Link |
 |----------|---------|------|
-| **API Reference** | Complete endpoint documentation | [📖 API Docs](docs/api/README.md) |
-| **Developer Guide** | Setup and development guide | [🛠 Dev Guide](docs/development.md) |
-| **Deployment Guide** | Production deployment | [🚀 Deploy Guide](docs/deployment.md) |
-| **Architecture Overview** | System design and components | [🏗 Architecture](docs/architecture.md) |
-| **Contributing Guide** | How to contribute | [🤝 Contributing](CONTRIBUTING.md) |
+| **API Reference** | Complete endpoint documentation | [📖 API Docs](docs/API.md) |
+| **Firewall Solutions** | Firewall compliance and setup | [🔒 Firewall Guide](docs/FIREWALL_FIX.md) |
+| **Complete Solutions** | Comprehensive firewall blocking | [🛡️ Complete Guide](docs/COMPLETE_FIREWALL_SOLUTION.md) |
 | **Brand Guidelines** | Brand assets and usage | [🎨 Brand Guide](BRAND_GUIDELINES.md) |
 
 ---

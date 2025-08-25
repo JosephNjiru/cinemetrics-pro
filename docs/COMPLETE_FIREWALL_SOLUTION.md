@@ -2,7 +2,7 @@
 
 ## Problem Statement Solution
 
-**Issue**: Firewall rules blocking connections to `scarf.sh` during command execution (`node ./report.js`)
+**Issue**: Firewall rules blocking connections to external analytics services during command execution
 
 **Root Cause**: Analytics packages or dependencies attempting to report telemetry data to blocked external services.
 
@@ -22,7 +22,7 @@ audit=false
 ```
 
 ### 2. Environment Variable Blocking
-Enhanced `scripts/setup-env.js` with comprehensive scarf.sh blocking:
+Enhanced `scripts/setup-env.js` with comprehensive analytics blocking:
 ```javascript
 process.env.DISABLE_SCARF = 'true';
 process.env.SCARF_ANALYTICS = 'false';
@@ -87,7 +87,7 @@ When phantom script blocker runs:
 ## Benefits of This Solution
 
 ### ✅ Comprehensive Coverage
-- Blocks scarf.sh at NPM configuration level
+- Blocks analytics services at NPM configuration level
 - Prevents phantom script execution
 - Provides CI/CD protection
 - Real-time monitoring and prevention
