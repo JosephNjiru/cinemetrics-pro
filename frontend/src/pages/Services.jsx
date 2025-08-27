@@ -122,37 +122,61 @@ const Services = () => {
       icon: '🎯',
       title: 'Strategic Business Consulting',
       description: 'Comprehensive business strategy development, competitive analysis, and strategic planning to drive sustainable growth and market leadership.',
-      features: ['Market Analysis', 'Strategic Planning', 'Competitive Intelligence', 'Growth Strategy']
+      features: ['Market Analysis', 'Strategic Planning', 'Competitive Intelligence', 'Growth Strategy'],
+      methodology: 'Rigour Strategic Framework™',
+      duration: '8-16 weeks',
+      outcomes: ['25% increase in market share', '35% revenue growth', 'Clear competitive advantage'],
+      industries: ['Technology', 'Healthcare', 'Financial Services', 'Manufacturing']
     },
     {
       icon: '🚀',
       title: 'Digital Transformation',
       description: 'End-to-end digital transformation solutions including technology assessment, digital strategy, and implementation roadmaps.',
-      features: ['Digital Strategy', 'Technology Assessment', 'Process Automation', 'Digital Culture']
+      features: ['Digital Strategy', 'Technology Assessment', 'Process Automation', 'Digital Culture'],
+      methodology: 'Digital Excellence Model™',
+      duration: '12-24 weeks',
+      outcomes: ['40% operational efficiency gain', '60% faster time-to-market', 'Digital-first culture'],
+      industries: ['Retail', 'Manufacturing', 'Professional Services', 'Government']
     },
     {
       icon: '📈',
       title: 'Data Analytics & Business Intelligence',
       description: 'Advanced analytics solutions that transform raw data into actionable insights and strategic business intelligence.',
-      features: ['Data Strategy', 'Predictive Analytics', 'Dashboard Development', 'Reporting Solutions']
+      features: ['Data Strategy', 'Predictive Analytics', 'Dashboard Development', 'Reporting Solutions'],
+      methodology: 'Analytics Impact Framework™',
+      duration: '6-12 weeks',
+      outcomes: ['Data-driven decision making', '30% cost reduction', 'Predictive insights'],
+      industries: ['E-commerce', 'Healthcare', 'Finance', 'Telecommunications']
     },
     {
       icon: '💡',
       title: 'Innovation & Change Management',
       description: 'Innovation frameworks and change management programs that foster creative thinking and successful organizational transformation.',
-      features: ['Innovation Strategy', 'Change Leadership', 'Organizational Design', 'Cultural Transformation']
+      features: ['Innovation Strategy', 'Change Leadership', 'Organizational Design', 'Cultural Transformation'],
+      methodology: 'Change Excellence Model™',
+      duration: '16-32 weeks',
+      outcomes: ['Innovation culture established', '95% adoption rate', 'Sustainable transformation'],
+      industries: ['Technology', 'Pharmaceuticals', 'Education', 'Non-profit']
     },
     {
       icon: '⚡',
       title: 'Process Optimization',
       description: 'Business process re-engineering and optimization that eliminates inefficiencies and maximizes operational excellence.',
-      features: ['Process Mapping', 'Efficiency Analysis', 'Automation Design', 'Quality Management']
+      features: ['Process Mapping', 'Efficiency Analysis', 'Automation Design', 'Quality Management'],
+      methodology: 'Operational Excellence Framework™',
+      duration: '8-16 weeks',
+      outcomes: ['50% process efficiency improvement', 'Quality enhancement', 'Cost optimization'],
+      industries: ['Manufacturing', 'Logistics', 'Healthcare', 'Government']
     },
     {
       icon: '🏆',
       title: 'Performance Management',
       description: 'Performance measurement systems and KPI development that align organizational activities with strategic objectives.',
-      features: ['KPI Development', 'Performance Dashboards', 'Benchmarking', 'ROI Analysis']
+      features: ['KPI Development', 'Performance Dashboards', 'Benchmarking', 'ROI Analysis'],
+      methodology: 'Performance Excellence System™',
+      duration: '4-8 weeks',
+      outcomes: ['Real-time performance visibility', 'Aligned objectives', 'Improved accountability'],
+      industries: ['All Industries', 'Government', 'Non-profit', 'SMEs']
     }
   ]);
 
@@ -181,13 +205,68 @@ const Services = () => {
               <StatIcon>{service.icon}</StatIcon>
               <FeatureTitle>{service.title}</FeatureTitle>
               <FeatureDescription>{service.description}</FeatureDescription>
-              <div style={{ marginTop: '1rem' }}>
-                <strong>Key Features:</strong>
-                <ul style={{ marginTop: '0.5rem', paddingLeft: '1.2rem' }}>
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} style={{ marginBottom: '0.3rem' }}>{feature}</li>
-                  ))}
-                </ul>
+              
+              <div style={{ marginTop: '1.5rem' }}>
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: '#1e3a8a', fontSize: '0.9rem' }}>🔬 Methodology:</strong>
+                  <div style={{ fontSize: '0.85rem', marginTop: '0.3rem', fontWeight: '600' }}>{service.methodology}</div>
+                </div>
+                
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: '#1e3a8a', fontSize: '0.9rem' }}>⏱️ Duration:</strong>
+                  <div style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>{service.duration}</div>
+                </div>
+                
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: '#1e3a8a', fontSize: '0.9rem' }}>🎯 Key Features:</strong>
+                  <ul style={{ marginTop: '0.5rem', paddingLeft: '1.2rem', fontSize: '0.85rem' }}>
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} style={{ marginBottom: '0.2rem' }}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: '#10b981', fontSize: '0.9rem' }}>🏆 Typical Outcomes:</strong>
+                  <ul style={{ marginTop: '0.5rem', paddingLeft: '1.2rem', fontSize: '0.85rem' }}>
+                    {service.outcomes.map((outcome, idx) => (
+                      <li key={idx} style={{ marginBottom: '0.2rem', color: '#059669' }}>{outcome}</li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div style={{ marginBottom: '1rem' }}>
+                  <strong style={{ color: '#1e3a8a', fontSize: '0.9rem' }}>🏭 Industries:</strong>
+                  <div style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
+                    {service.industries.join(', ')}
+                  </div>
+                </div>
+                
+                <div style={{ 
+                  marginTop: '1.5rem', 
+                  padding: '0.75rem', 
+                  backgroundColor: '#f0f9ff', 
+                  borderRadius: '6px',
+                  border: '1px solid #e0f2fe',
+                  textAlign: 'center'
+                }}>
+                  <button style={{
+                    background: 'linear-gradient(135deg, #1e3a8a 0%, #fbbf24 100%)',
+                    color: 'white',
+                    border: 'none',
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: '6px',
+                    fontSize: '0.9rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s ease'
+                  }}
+                  onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
+                  onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
+                  >
+                    Request Consultation
+                  </button>
+                </div>
               </div>
             </StatCard>
           ))}

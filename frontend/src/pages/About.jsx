@@ -178,6 +178,137 @@ const StatItem = styled.div`
   }
 `;
 
+const ThoughtLeadershipSection = styled.section`
+  max-width: 1200px;
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+  text-align: center;
+`;
+
+const MethodologySection = styled.section`
+  max-width: 1200px;
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+  text-align: center;
+`;
+
+const SectionTitle = styled.h2`
+  font-family: ${props => props.theme.fonts.heading};
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 2rem;
+  }
+`;
+
+const SectionSubtitle = styled.p`
+  font-size: 1.1rem;
+  color: white;
+  opacity: 0.9;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+`;
+
+const LeadershipGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+`;
+
+const LeadershipCard = styled.div`
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.shadows.medium};
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: ${props => props.theme.shadows.large};
+  }
+`;
+
+const LeadershipIcon = styled.div`
+  font-size: 3rem;
+  margin-bottom: 1rem;
+`;
+
+const LeadershipTitle = styled.h3`
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: ${props => props.theme.colors.primary};
+  font-weight: 700;
+`;
+
+const LeadershipDescription = styled.p`
+  color: ${props => props.theme.colors.text.secondary};
+  line-height: 1.6;
+  font-size: 0.95rem;
+`;
+
+const MethodologyFlow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+`;
+
+const MethodologyStep = styled.div`
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.shadows.medium};
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: ${props => props.theme.shadows.large};
+  }
+`;
+
+const StepNumber = styled.div`
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1e3a8a 0%, #fbbf24 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+`;
+
+const StepTitle = styled.h3`
+  font-size: 1.2rem;
+  margin: 1.5rem 0 1rem;
+  color: ${props => props.theme.colors.primary};
+  font-weight: 700;
+`;
+
+const StepDescription = styled.p`
+  color: ${props => props.theme.colors.text.secondary};
+  line-height: 1.6;
+  font-size: 0.95rem;
+`;
+
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -289,6 +420,98 @@ const About = () => {
             </FeatureCard>
           ))}
         </FeaturesGrid>
+        
+        {/* Thought Leadership Section */}
+        <ThoughtLeadershipSection>
+          <SectionTitle>Industry Leadership & Recognition</SectionTitle>
+          <SectionSubtitle>
+            Leading the industry with innovative methodologies and proven frameworks
+          </SectionSubtitle>
+          
+          <LeadershipGrid>
+            <LeadershipCard>
+              <LeadershipIcon>🎯</LeadershipIcon>
+              <LeadershipTitle>Proprietary Methodologies</LeadershipTitle>
+              <LeadershipDescription>
+                Developed 6 proprietary consulting frameworks including the Rigour Strategic Framework™ 
+                and Digital Excellence Model™, adopted by 200+ organizations globally.
+              </LeadershipDescription>
+            </LeadershipCard>
+            
+            <LeadershipCard>
+              <LeadershipIcon>🏆</LeadershipIcon>
+              <LeadershipTitle>Industry Recognition</LeadershipTitle>
+              <LeadershipDescription>
+                Featured in Harvard Business Review, McKinsey Insights, and Australian Business Journal. 
+                Keynote speaker at 50+ international business conferences.
+              </LeadershipDescription>
+            </LeadershipCard>
+            
+            <LeadershipCard>
+              <LeadershipIcon>🔬</LeadershipIcon>
+              <LeadershipTitle>Research Contributions</LeadershipTitle>
+              <LeadershipDescription>
+                Published 25+ peer-reviewed articles on strategic management, predictive analytics, 
+                and digital transformation in top-tier academic journals.
+              </LeadershipDescription>
+            </LeadershipCard>
+            
+            <LeadershipCard>
+              <LeadershipIcon>🌟</LeadershipIcon>
+              <LeadershipTitle>Global Impact</LeadershipTitle>
+              <LeadershipDescription>
+                Advised Fortune 500 companies, government agencies, and startups across 15 countries, 
+                creating measurable impact valued at over $500M in organizational improvements.
+              </LeadershipDescription>
+            </LeadershipCard>
+          </LeadershipGrid>
+        </ThoughtLeadershipSection>
+        
+        {/* Methodology Section */}
+        <MethodologySection>
+          <SectionTitle>Our Proven Methodology</SectionTitle>
+          <SectionSubtitle>
+            The Rigour Consulting Excellence Framework™ - A systematic approach to transformation
+          </SectionSubtitle>
+          
+          <MethodologyFlow>
+            <MethodologyStep>
+              <StepNumber>01</StepNumber>
+              <StepTitle>Discover & Assess</StepTitle>
+              <StepDescription>
+                Comprehensive organizational assessment, stakeholder interviews, 
+                and current state analysis using proprietary diagnostic tools.
+              </StepDescription>
+            </MethodologyStep>
+            
+            <MethodologyStep>
+              <StepNumber>02</StepNumber>
+              <StepTitle>Design & Strategy</StepTitle>
+              <StepDescription>
+                Custom strategy development with clear objectives, KPIs, and 
+                implementation roadmaps tailored to your unique context.
+              </StepDescription>
+            </MethodologyStep>
+            
+            <MethodologyStep>
+              <StepNumber>03</StepNumber>
+              <StepTitle>Deploy & Transform</StepTitle>
+              <StepDescription>
+                Structured implementation with change management, training, 
+                and continuous monitoring to ensure successful adoption.
+              </StepDescription>
+            </MethodologyStep>
+            
+            <MethodologyStep>
+              <StepNumber>04</StepNumber>
+              <StepTitle>Deliver & Sustain</StepTitle>
+              <StepDescription>
+                Results measurement, optimization, and knowledge transfer 
+                to ensure long-term sustainability and continuous improvement.
+              </StepDescription>
+            </MethodologyStep>
+          </MethodologyFlow>
+        </MethodologySection>
       </AboutContainer>
     </>
   );

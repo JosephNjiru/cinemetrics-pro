@@ -178,6 +178,94 @@ const StatItem = styled.div`
   }
 `;
 
+const TestimonialsSection = styled.section`
+  max-width: 1200px;
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+  text-align: center;
+`;
+
+const TestimonialsTitle = styled.h2`
+  font-family: ${props => props.theme.fonts.heading};
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 2rem;
+  }
+`;
+
+const TestimonialsSubtitle = styled.p`
+  font-size: 1.1rem;
+  color: white;
+  opacity: 0.9;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const TestimonialsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+`;
+
+const TestimonialCard = styled.div`
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.shadows.medium};
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: ${props => props.theme.shadows.large};
+  }
+`;
+
+const TestimonialQuote = styled.blockquote`
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: ${props => props.theme.colors.text.primary};
+  margin-bottom: 1.5rem;
+  position: relative;
+  
+  &:before {
+    content: '"';
+    font-size: 4rem;
+    color: ${props => props.theme.colors.primary};
+    position: absolute;
+    top: -1rem;
+    left: -0.5rem;
+    font-family: serif;
+  }
+`;
+
+const TestimonialAuthor = styled.cite`
+  font-size: 0.9rem;
+  color: ${props => props.theme.colors.text.secondary};
+  margin-bottom: 0.5rem;
+  display: block;
+  font-style: normal;
+`;
+
+const TestimonialResults = styled.div`
+  font-size: 0.85rem;
+  color: ${props => props.theme.colors.consulting.navy};
+  background: linear-gradient(135deg, #1e3a8a10, #fbbf2410);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  border: 1px solid ${props => props.theme.colors.consulting.navy}20;
+`;
+
 const Welcome = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -291,6 +379,56 @@ const Welcome = () => {
             </FeatureCard>
           ))}
         </FeaturesGrid>
+        
+        {/* Client Success Stories */}
+        <TestimonialsSection>
+          <TestimonialsTitle>Client Success Stories</TestimonialsTitle>
+          <TestimonialsSubtitle>Hear from leaders who've transformed their organizations with our expertise</TestimonialsSubtitle>
+          
+          <TestimonialsGrid>
+            <TestimonialCard>
+              <TestimonialQuote>
+                "Rigour Consulting transformed our digital strategy completely. Their data-driven approach 
+                resulted in a 40% increase in operational efficiency and positioned us as an industry leader."
+              </TestimonialQuote>
+              <TestimonialAuthor>
+                <strong>Sarah Chen</strong><br />
+                CEO, TechForward Solutions
+              </TestimonialAuthor>
+              <TestimonialResults>
+                Results: 40% efficiency gain, $2M cost savings
+              </TestimonialResults>
+            </TestimonialCard>
+            
+            <TestimonialCard>
+              <TestimonialQuote>
+                "The strategic framework Dr. Njiru developed helped us navigate a complex market transition. 
+                We achieved 25% market share growth within 6 months of implementation."
+              </TestimonialQuote>
+              <TestimonialAuthor>
+                <strong>Michael Rodriguez</strong><br />
+                Managing Director, Global Manufacturing Inc.
+              </TestimonialAuthor>
+              <TestimonialResults>
+                Results: 25% market share growth, successful transition
+              </TestimonialResults>
+            </TestimonialCard>
+            
+            <TestimonialCard>
+              <TestimonialQuote>
+                "Outstanding expertise in change management. The team guided us through our largest 
+                organizational transformation with 95% employee adoption rate - exceptional results."
+              </TestimonialQuote>
+              <TestimonialAuthor>
+                <strong>Dr. Emma Thompson</strong><br />
+                Chief Operating Officer, HealthCare Plus
+              </TestimonialAuthor>
+              <TestimonialResults>
+                Results: 95% adoption rate, seamless transformation
+              </TestimonialResults>
+            </TestimonialCard>
+          </TestimonialsGrid>
+        </TestimonialsSection>
       </WelcomeContainer>
     </>
   );

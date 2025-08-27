@@ -178,6 +178,156 @@ const StatItem = styled.div`
   }
 `;
 
+const ConsultationSection = styled.section`
+  max-width: 800px;
+  margin: 6rem auto 0;
+  padding: 0 2rem;
+  text-align: center;
+`;
+
+const FormTitle = styled.h2`
+  font-family: ${props => props.theme.fonts.heading};
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    font-size: 2rem;
+  }
+`;
+
+const FormSubtitle = styled.p`
+  font-size: 1.1rem;
+  color: white;
+  opacity: 0.9;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+`;
+
+const ConsultationForm = styled.form`
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 2.5rem;
+  border-radius: ${props => props.theme.borderRadius};
+  box-shadow: ${props => props.theme.shadows.large};
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+`;
+
+const FormRow = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  
+  @media (max-width: ${props => props.theme.breakpoints.mobile}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const FormField = styled.div`
+  margin-bottom: 1.5rem;
+`;
+
+const FormLabel = styled.label`
+  display: block;
+  font-weight: 600;
+  color: ${props => props.theme.colors.text.primary};
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+`;
+
+const FormInput = styled.input`
+  width: 100%;
+  padding: 0.875rem;
+  border: 2px solid ${props => props.theme.colors.border};
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  
+  &:focus {
+    outline: none;
+    border-color: ${props => props.theme.colors.primary};
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  }
+  
+  &::placeholder {
+    color: ${props => props.theme.colors.text.secondary};
+  }
+`;
+
+const FormSelect = styled.select`
+  width: 100%;
+  padding: 0.875rem;
+  border: 2px solid ${props => props.theme.colors.border};
+  border-radius: 6px;
+  font-size: 1rem;
+  background: white;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
+    border-color: ${props => props.theme.colors.primary};
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  }
+`;
+
+const FormTextarea = styled.textarea`
+  width: 100%;
+  padding: 0.875rem;
+  border: 2px solid ${props => props.theme.colors.border};
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 120px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  
+  &:focus {
+    outline: none;
+    border-color: ${props => props.theme.colors.primary};
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  }
+  
+  &::placeholder {
+    color: ${props => props.theme.colors.text.secondary};
+  }
+`;
+
+const SubmitButton = styled.button`
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #1e3a8a 0%, #fbbf24 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+`;
+
+const FormDisclaimer = styled.p`
+  font-size: 0.85rem;
+  color: ${props => props.theme.colors.text.secondary};
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 1.5;
+`;
+
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -288,6 +438,129 @@ const Contact = () => {
             </FeatureCard>
           ))}
         </FeaturesGrid>
+        
+        {/* Consultation Request Form */}
+        <ConsultationSection>
+          <FormTitle>Request a Free Strategic Consultation</FormTitle>
+          <FormSubtitle>
+            Let's discuss how we can help transform your business. Our experts will provide 
+            a customized assessment and strategic recommendations.
+          </FormSubtitle>
+          
+          <ConsultationForm>
+            <FormRow>
+              <FormField>
+                <FormLabel>Full Name *</FormLabel>
+                <FormInput type="text" placeholder="Enter your full name" required />
+              </FormField>
+              <FormField>
+                <FormLabel>Job Title *</FormLabel>
+                <FormInput type="text" placeholder="e.g. CEO, Director, Manager" required />
+              </FormField>
+            </FormRow>
+            
+            <FormRow>
+              <FormField>
+                <FormLabel>Company Name *</FormLabel>
+                <FormInput type="text" placeholder="Your company name" required />
+              </FormField>
+              <FormField>
+                <FormLabel>Industry *</FormLabel>
+                <FormSelect required>
+                  <option value="">Select your industry</option>
+                  <option value="technology">Technology</option>
+                  <option value="healthcare">Healthcare</option>
+                  <option value="finance">Financial Services</option>
+                  <option value="manufacturing">Manufacturing</option>
+                  <option value="retail">Retail</option>
+                  <option value="education">Education</option>
+                  <option value="government">Government</option>
+                  <option value="other">Other</option>
+                </FormSelect>
+              </FormField>
+            </FormRow>
+            
+            <FormRow>
+              <FormField>
+                <FormLabel>Email Address *</FormLabel>
+                <FormInput type="email" placeholder="your.email@company.com" required />
+              </FormField>
+              <FormField>
+                <FormLabel>Phone Number</FormLabel>
+                <FormInput type="tel" placeholder="+61 XXX XXX XXX" />
+              </FormField>
+            </FormRow>
+            
+            <FormField>
+              <FormLabel>Company Size *</FormLabel>
+              <FormSelect required>
+                <option value="">Select company size</option>
+                <option value="startup">Startup (1-10 employees)</option>
+                <option value="small">Small Business (11-50 employees)</option>
+                <option value="medium">Medium Business (51-200 employees)</option>
+                <option value="large">Large Enterprise (200+ employees)</option>
+              </FormSelect>
+            </FormField>
+            
+            <FormField>
+              <FormLabel>Consulting Area of Interest *</FormLabel>
+              <FormSelect required>
+                <option value="">Select primary interest</option>
+                <option value="strategic">Strategic Business Consulting</option>
+                <option value="digital">Digital Transformation</option>
+                <option value="analytics">Data Analytics & BI</option>
+                <option value="innovation">Innovation & Change Management</option>
+                <option value="process">Process Optimization</option>
+                <option value="performance">Performance Management</option>
+                <option value="multiple">Multiple Areas</option>
+              </FormSelect>
+            </FormField>
+            
+            <FormField>
+              <FormLabel>Project Description *</FormLabel>
+              <FormTextarea 
+                placeholder="Please describe your current challenges, objectives, and how we can help transform your business..."
+                rows="5"
+                required
+              />
+            </FormField>
+            
+            <FormField>
+              <FormLabel>Preferred Timeline</FormLabel>
+              <FormSelect>
+                <option value="">Select timeline</option>
+                <option value="immediate">Immediate (within 1 month)</option>
+                <option value="short">Short-term (1-3 months)</option>
+                <option value="medium">Medium-term (3-6 months)</option>
+                <option value="long">Long-term (6+ months)</option>
+                <option value="planning">Planning phase</option>
+              </FormSelect>
+            </FormField>
+            
+            <FormField>
+              <FormLabel>Budget Range (Optional)</FormLabel>
+              <FormSelect>
+                <option value="">Select budget range</option>
+                <option value="under50k">Under $50,000</option>
+                <option value="50k-100k">$50,000 - $100,000</option>
+                <option value="100k-250k">$100,000 - $250,000</option>
+                <option value="250k-500k">$250,000 - $500,000</option>
+                <option value="500k-1m">$500,000 - $1,000,000</option>
+                <option value="over1m">Over $1,000,000</option>
+                <option value="discuss">Prefer to discuss</option>
+              </FormSelect>
+            </FormField>
+            
+            <SubmitButton type="submit">
+              🚀 Request Free Consultation
+            </SubmitButton>
+            
+            <FormDisclaimer>
+              * Required fields. We respect your privacy and will never share your information. 
+              You'll receive a response within 24 hours from our senior consulting team.
+            </FormDisclaimer>
+          </ConsultationForm>
+        </ConsultationSection>
       </ContactContainer>
     </>
   );
