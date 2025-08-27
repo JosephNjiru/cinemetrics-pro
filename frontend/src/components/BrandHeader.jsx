@@ -1,6 +1,6 @@
-// CineMetrics Pro - Brand Header Component
+// Rigour Consulting - Brand Header Component
 // Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI
-// Advanced Film Intelligence & Awards Analytics Platform
+// World-Class Strategic Business Consulting Platform
 
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
@@ -11,7 +11,7 @@ const HeaderContainer = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
   color: white;
   padding: 1rem 0;
   z-index: 1000;
@@ -142,9 +142,9 @@ const BrandHeader = ({ apiStatus = 'checking' }) => {
   
   const navItems = [
     { path: '/', label: 'Home' },
-    { path: '/dashboard', label: 'Dashboard' },
-    { path: '/movies', label: 'Movies' },
-    { path: '/awards', label: 'Awards' }
+    { path: '/services', label: 'Services' },
+    { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' }
   ];
   
   const getStatusText = (status) => {
@@ -161,10 +161,10 @@ const BrandHeader = ({ apiStatus = 'checking' }) => {
     <HeaderContainer>
       <HeaderContent>
         <BrandSection>
-          <Logo>🎬</Logo>
+          <Logo>💼</Logo>
           <BrandText>
-            <h1>CineMetrics Pro</h1>
-            <p>Where Cinema Meets Advanced Data Science</p>
+            <h1>Rigour Consulting</h1>
+            <p>Excellence in Strategy, Innovation & Digital Transformation</p>
           </BrandText>
         </BrandSection>
         
@@ -187,7 +187,7 @@ const BrandHeader = ({ apiStatus = 'checking' }) => {
         
         <CreatorInfo>
           <div>Dr. Joseph N. Njiru, PhD</div>
-          <div>M PredAnylt (Data Science)</div>
+          <div>Principal Consultant</div>
         </CreatorInfo>
       </HeaderContent>
     </HeaderContainer>

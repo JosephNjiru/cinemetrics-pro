@@ -1,17 +1,17 @@
 {
-  "name": "cinemetrics-pro",
+  "name": "rigour-consulting-pro",
   "version": "1.0.0",
-  "description": "CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform - Where Cinema Meets Advanced Data Science",
+  "description": "Rigour Consulting: World-Class Strategic Business Consulting - Excellence in Strategy, Innovation & Digital Transformation",
   "main": "index.js",
   "private": false,
   "author": {
     "name": "Dr. Joseph N. Njiru",
-    "email": "joseph@cinemetrics-pro.com",
+    "email": "contact@rigourconsulting.com.au",
     "url": "https://linkedin.com/in/joseph-n-njiru-phd",
     "credentials": "PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI"
   },
   "license": "MIT",
-  "homepage": "https://cinemetrics-pro.com",
+  "homepage": "https://rigourconsulting.com.au",
   "repository": {
     "type": "git",
     "url": "https://github.com/JosephNjiru/cinemetrics-pro.git"
@@ -20,32 +20,33 @@
     "url": "https://github.com/JosephNjiru/cinemetrics-pro/issues"
   },
   "keywords": [
-    "film-analytics",
-    "movie-database",
-    "oscar-awards",
-    "data-science",
-    "cinema-intelligence",
-    "full-stack",
-    "react",
-    "nodejs",
-    "machine-learning",
-    "advanced-analytics",
-    "phd-project",
-    "film-industry",
-    "tmdb-api",
-    "awards-prediction"
+    "business-consulting",
+    "strategic-consulting",
+    "digital-transformation",
+    "management-consulting",
+    "data-analytics",
+    "business-strategy",
+    "consulting-services",
+    "enterprise-solutions",
+    "innovation-consulting",
+    "technology-consulting",
+    "process-optimization",
+    "rigour-consulting",
+    "australia-consulting",
+    "world-class-consulting",
+    "top-consulting-firm"
   ],
   "scripts": {
     "preinstall": "node ./scripts/setup-env.js && node ./scripts/block-phantom-scripts.js",
     "prebuild": "node ./scripts/setup-env.js && node ./scripts/block-phantom-scripts.js",
-    "dev": "echo '🎬 Starting CineMetrics Pro development environment...' && echo 'Navigate to frontend/ or backend/ directories for specific commands'",
+    "dev": "echo '💼 Starting Rigour Consulting development environment...' && echo 'Navigate to frontend/ or backend/ directories for specific commands'",
     "start": "docker-compose up",
     "start:prod": "docker-compose -f docker-compose.prod.yml up -d",
     "test": "echo '🧪 Running all tests...' && cd backend && npm test -- --passWithNoTests && cd ../frontend && npm test -- --passWithNoTests --watchAll=false",
     "build": "cd frontend && npm run build",
-    "deploy": "echo '🚀 Deploying CineMetrics Pro to production...'",
-    "docs": "echo '📚 Visit: https://docs.cinemetrics-pro.com'",
-    "setup": "echo '⚙️ Setting up CineMetrics Pro...' && npm install && cd backend && npm install && cd ../frontend && npm install",
+    "deploy": "echo '🚀 Deploying Rigour Consulting to production...'",
+    "docs": "echo '📚 Visit: https://rigourconsulting.com.au'",
+    "setup": "echo '⚙️ Setting up Rigour Consulting...' && npm install && cd backend && npm install && cd ../frontend && npm install",
     "verify:urls": "node verify-no-blocked-urls.js",
     "mock:services": "node ./scripts/mock-services.js",
     "setup:env": "node ./scripts/setup-env.js",
@@ -66,8 +67,8 @@
     "npm": ">=9.0.0"
   },
   "config": {
-    "platform": "CineMetrics Pro",
-    "version_name": "Advanced Film Intelligence Platform",
+    "platform": "Rigour Consulting",
+    "version_name": "World-Class Strategic Business Consulting Platform",
     "api_version": "v1"
   }
 }

@@ -1,12 +1,12 @@
 {
-  "name": "cinemetrics-pro-frontend",
+  "name": "rigour-consulting-frontend",
   "version": "1.0.0",
-  "description": "CineMetrics Pro: Advanced Film Intelligence & Awards Analytics Platform - Frontend Application",
-  "homepage": "https://cinemetrics-pro.com/",
+  "description": "Rigour Consulting: World-Class Strategic Business Consulting - Frontend Application",
+  "homepage": "https://rigourconsulting.com.au/",
   "private": false,
   "author": {
     "name": "Dr. Joseph N. Njiru",
-    "email": "joseph@cinemetrics-pro.com",
+    "email": "contact@rigourconsulting.com.au",
     "url": "https://linkedin.com/in/joseph-n-njiru-phd",
     "credentials": "PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI"
   },
@@ -20,15 +20,16 @@
     "url": "https://github.com/JosephNjiru/cinemetrics-pro/issues"
   },
   "keywords": [
-    "film-analytics",
-    "movie-database",
-    "oscar-awards",
-    "data-visualization",
+    "business-consulting",
+    "strategic-consulting",
+    "digital-transformation",
+    "consulting-services",
     "react",
-    "github-pages",
-    "cinema-intelligence",
-    "data-science",
-    "progressive-web-app"
+    "progressive-web-app",
+    "consulting-website",
+    "rigour-consulting",
+    "australia-consulting",
+    "enterprise-solutions"
   ],
   "scripts": {
     "preinstall": "node ../scripts/setup-env.js && node ../scripts/block-phantom-scripts.js",
@@ -40,11 +41,11 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "deploy:github": "npm run build && gh-pages -d build -m 'Deploy CineMetrics Pro v1.0.0'",
+    "deploy:github": "npm run build && gh-pages -d build -m 'Deploy Rigour Consulting v1.0.0'",
     "analyze": "npm run build && npx source-map-explorer 'build/static/js/*.js'",
     "lighthouse": "lhci autorun",
     "serve": "serve -s build -l 3000",
-    "postbuild": "echo 'Build completed for CineMetrics Pro by Dr. Joseph N. Njiru'"
+    "postbuild": "echo 'Build completed for Rigour Consulting by Dr. Joseph N. Njiru'"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^6.1.5",
@@ -102,8 +103,8 @@
     "npm": ">=9.0.0"
   },
   "config": {
-    "app_name": "CineMetrics Pro",
-    "tagline": "Where Cinema Meets Advanced Data Science",
+    "app_name": "Rigour Consulting",
+    "tagline": "Excellence in Strategy, Innovation & Digital Transformation",
     "api_version": "v1",
     "deploy_branch": "gh-pages"
   },

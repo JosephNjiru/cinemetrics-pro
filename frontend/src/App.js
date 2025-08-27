@@ -1,7 +1,8 @@
-// CineMetrics Pro - Main React Application
+// Rigour Consulting - Main React Application
 // Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI
-// Advanced Film Intelligence & Awards Analytics Platform
-// Created: 2025-08-24 14:40:59 UTC
+// World-Class Strategic Business Consulting Platform
+// Excellence in Strategy, Innovation & Digital Transformation
+// Created: 2025-08-27
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
@@ -13,9 +14,9 @@ import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 // Components
 import BrandHeader from './components/BrandHeader';
 import Welcome from './pages/Welcome';
-import Dashboard from './pages/Dashboard';
-import Movies from './pages/Movies';
-import Awards from './pages/Awards';
+import Services from './pages/Services';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import LoadingSpinner from './components/LoadingSpinner';
 import ErrorFallback from './components/ErrorFallback';
 
@@ -33,26 +34,33 @@ const queryClient = new QueryClient({
   },
 });
 
-// Theme configuration
+// Theme configuration - Professional Consulting Brand
 const theme = {
   colors: {
-    primary: '#667eea',
-    secondary: '#764ba2',
-    accent: '#f4d03f',
-    success: '#28a745',
-    warning: '#ffc107',
-    error: '#dc3545',
+    primary: '#1e3a8a',        // Professional Blue
+    secondary: '#1e40af',      // Rich Blue
+    accent: '#fbbf24',         // Consulting Gold
+    success: '#10b981',        // Success Green
+    warning: '#f59e0b',        // Warning Amber
+    error: '#dc2626',          // Error Red
     text: {
-      primary: '#343a40',
-      secondary: '#6c757d',
-      light: '#ffffff',
+      primary: '#1f2937',      // Dark Gray
+      secondary: '#4b5563',    // Medium Gray
+      light: '#ffffff',        // White
     },
     background: {
-      primary: '#ffffff',
-      secondary: '#f8f9fa',
-      gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      primary: '#ffffff',      // Pure White
+      secondary: '#f9fafb',    // Light Gray
+      gradient: 'linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%)', // Blue Gradient
+      consultingGradient: 'linear-gradient(135deg, #1e3a8a 0%, #fbbf24 100%)', // Blue to Gold
     },
-    border: '#dee2e6',
+    border: '#e5e7eb',         // Light Border
+    consulting: {
+      navy: '#1e3a8a',
+      gold: '#fbbf24',
+      white: '#ffffff',
+      lightGray: '#f9fafb',
+    },
   },
   fonts: {
     primary: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif",
@@ -159,24 +167,24 @@ function App() {
   useEffect(() => {
     const checkApiHealth = async () => {
       try {
-        console.log('🔍 CineMetrics Pro: Initializing API connection...');
+        console.log('💼 Rigour Consulting: Initializing platform...');
         const response = await apiService.checkHealth();
         
         if (response && response.status === 'healthy') {
           const status = apiService.getStatus();
           if (status.demoMode) {
             setApiStatus('demo');
-            console.log('🎭 Running in demo mode with sample data');
+            console.log('✨ Running in demonstration mode');
           } else {
             setApiStatus('healthy');
-            console.log('✅ Connected to live API backend');
+            console.log('✅ Connected to live platform services');
           }
         } else {
           setApiStatus('demo');
-          console.log('🎭 Using demo mode');
+          console.log('✨ Using demonstration mode');
         }
       } catch (error) {
-        console.warn('⚠️ API initialization failed, using demo mode:', error.message);
+        console.warn('⚠️ Platform initialization in demo mode:', error.message);
         setApiStatus('demo');
       } finally {
         // Simulate loading time for better UX
@@ -202,9 +210,9 @@ function App() {
           fontFamily: theme.fonts.primary
         }}>
           <div>
-            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🎬</div>
-            <h2 style={{ marginBottom: '0.5rem', fontFamily: theme.fonts.heading }}>CineMetrics Pro</h2>
-            <p style={{ marginBottom: '2rem', opacity: 0.9 }}>Loading Advanced Film Intelligence...</p>
+            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>💼</div>
+            <h2 style={{ marginBottom: '0.5rem', fontFamily: theme.fonts.heading }}>Rigour Consulting</h2>
+            <p style={{ marginBottom: '2rem', opacity: 0.9 }}>Loading World-Class Consulting Platform...</p>
             <LoadingSpinner />
           </div>
         </div>
@@ -218,15 +226,15 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <ThemeProvider theme={theme}>
             <GlobalStyle />
-            <Router basename={process.env.NODE_ENV === 'production' ? '/cinemetrics-pro' : ''}>
+            <Router basename={process.env.NODE_ENV === 'production' ? '/rigour-consulting' : ''}>
               <AppContainer>
                 <BrandHeader apiStatus={apiStatus} />
                 <ContentWrapper>
                   <Routes>
                     <Route path="/" element={<Welcome />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/movies" element={<Movies />} />
-                    <Route path="/awards" element={<Awards />} />
+                    <Route path="/services" element={<Services />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/contact" element={<Contact />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                   </Routes>
                 </ContentWrapper>

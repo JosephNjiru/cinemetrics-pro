@@ -1,4 +1,4 @@
-// Rigour Consulting - Welcome Page
+// Rigour Consulting - Contact Page
 // Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI
 // World-Class Strategic Business Consulting Platform
 
@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
-const WelcomeContainer = styled.div`
+const ContactContainer = styled.div`
   min-height: 100vh;
   background: ${props => props.theme.colors.background.gradient};
   padding: 2rem;
@@ -178,7 +178,7 @@ const StatItem = styled.div`
   }
 `;
 
-const Welcome = () => {
+const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -190,60 +190,61 @@ const Welcome = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const features = [
+  const contactInfo = [
     {
-      icon: '🎯',
-      title: 'Strategic Consulting',
-      description: 'Comprehensive business strategy development and implementation with proven methodologies that drive sustainable growth and competitive advantage.'
+      icon: '📧',
+      title: 'Email',
+      description: 'contact@rigourconsulting.com.au'
     },
     {
-      icon: '🚀',
-      title: 'Digital Transformation',
-      description: 'End-to-end digital transformation solutions that modernize operations, enhance efficiency, and unlock new opportunities.'
+      icon: '📱',
+      title: 'Phone',
+      description: '+61 (0)3 XXXX XXXX'
     },
     {
-      icon: '📈',
-      title: 'Data Analytics & Insights',
-      description: 'Advanced data analytics and business intelligence solutions that transform raw data into actionable strategic insights.'
+      icon: '🏢',
+      title: 'Office',
+      description: 'Melbourne, Victoria, Australia'
     },
     {
-      icon: '💡',
-      title: 'Innovation Consulting',
-      description: 'Innovation strategies and implementation frameworks that foster creative thinking and drive breakthrough solutions.'
+      icon: '🌐',
+      title: 'Website',
+      description: 'www.rigourconsulting.com.au'
     },
     {
-      icon: '⚡',
-      title: 'Process Optimization',
-      description: 'Business process re-engineering and optimization that eliminates inefficiencies and maximizes operational excellence.'
+      icon: '💼',
+      title: 'LinkedIn',
+      description: 'linkedin.com/in/joseph-n-njiru-phd'
     },
     {
-      icon: '🏆',
-      title: 'Change Management',
-      description: 'Comprehensive change management programs that ensure successful organizational transformation and adoption.'
+      icon: '⏰',
+      title: 'Business Hours',
+      description: 'Monday - Friday: 9:00 AM - 6:00 PM AEDT'
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Rigour Consulting - World-Class Strategic Business Consulting | Excellence in Strategy & Innovation</title>
-        <meta name="description" content="Australia's premier strategic business consulting firm. Expert consulting in digital transformation, business strategy, process optimization, and enterprise solutions. Delivering unmatched consulting excellence with proven methodologies." />
-        <meta name="keywords" content="business consulting, strategic consulting, digital transformation, management consulting, business strategy, process optimization, enterprise solutions, australia consulting, innovation consulting" />
-        <link rel="canonical" href="https://rigourconsulting.com.au/" />
+        <title>Contact Us - Rigour Consulting | Get in Touch for Strategic Consulting</title>
+        <meta name="description" content="Contact Rigour Consulting for world-class strategic business consulting services. Reach out to Dr. Joseph N. Njiru, PhD for expert consulting solutions." />
+        <meta name="keywords" content="contact rigour consulting, business consulting contact, strategic consulting melbourne, consulting inquiry, dr joseph njiru contact" />
+        <link rel="canonical" href="https://rigourconsulting.com.au/contact" />
       </Helmet>
       
-      <WelcomeContainer>
+      <ContactContainer>
         <HeroSection>
-          <HeroTitle>💼 Rigour Consulting</HeroTitle>
-          <HeroSubtitle>Excellence in Strategy, Innovation & Digital Transformation</HeroSubtitle>
+          <HeroTitle>📞 Contact Us</HeroTitle>
+          <HeroSubtitle>Ready to Transform Your Business?</HeroSubtitle>
           <HeroDescription>
-            Australia's premier strategic business consulting firm delivering world-class solutions 
-            in digital transformation, business strategy, and enterprise optimization. 
-            Partner with us to unlock your organization's full potential.
+            Get in touch with our expert consulting team to discuss how we can help 
+            your organization achieve its strategic goals. We offer free initial 
+            consultations to understand your challenges and explore solutions.
           </HeroDescription>
           
           <CreatorInfo>
-            <p>Founded by <strong>Dr. Joseph N. Njiru, PhD</strong></p>
+            <p><strong>Principal Consultant</strong></p>
+            <p><strong>Dr. Joseph N. Njiru, PhD</strong></p>
             <p>M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI</p>
           </CreatorInfo>
           
@@ -256,44 +257,40 @@ const Welcome = () => {
               <span>💼</span>
               About Us
             </CTAButton>
-            <CTAButton to="/contact">
-              <span>📞</span>
-              Contact Us
-            </CTAButton>
           </CTASection>
           
           <StatsBar>
             <StatItem>
-              <span className="stat-number">500+</span>
-              <div className="stat-label">Successful Projects</div>
+              <span className="stat-number">24h</span>
+              <div className="stat-label">Response Time</div>
             </StatItem>
             <StatItem>
-              <span className="stat-number">15+</span>
-              <div className="stat-label">Years Experience</div>
+              <span className="stat-number">Free</span>
+              <div className="stat-label">Initial Consultation</div>
             </StatItem>
             <StatItem>
-              <span className="stat-number">98%</span>
-              <div className="stat-label">Client Satisfaction</div>
+              <span className="stat-number">100%</span>
+              <div className="stat-label">Confidential</div>
             </StatItem>
             <StatItem>
-              <span className="stat-number">200+</span>
-              <div className="stat-label">Enterprise Clients</div>
+              <span className="stat-number">Global</span>
+              <div className="stat-label">Remote Support</div>
             </StatItem>
           </StatsBar>
         </HeroSection>
 
         <FeaturesGrid>
-          {features.map((feature, index) => (
+          {contactInfo.map((item, index) => (
             <FeatureCard key={index}>
-              <FeatureIcon>{feature.icon}</FeatureIcon>
-              <FeatureTitle>{feature.title}</FeatureTitle>
-              <FeatureDescription>{feature.description}</FeatureDescription>
+              <FeatureIcon>{item.icon}</FeatureIcon>
+              <FeatureTitle>{item.title}</FeatureTitle>
+              <FeatureDescription>{item.description}</FeatureDescription>
             </FeatureCard>
           ))}
         </FeaturesGrid>
-      </WelcomeContainer>
+      </ContactContainer>
     </>
   );
 };
 
-export default Welcome;
+export default Contact;

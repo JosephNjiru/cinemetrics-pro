@@ -1,4 +1,4 @@
-// Rigour Consulting - Welcome Page
+// Rigour Consulting - About Page
 // Dr. Joseph N. Njiru, PhD, M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI
 // World-Class Strategic Business Consulting Platform
 
@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 
-const WelcomeContainer = styled.div`
+const AboutContainer = styled.div`
   min-height: 100vh;
   background: ${props => props.theme.colors.background.gradient};
   padding: 2rem;
@@ -178,7 +178,7 @@ const StatItem = styled.div`
   }
 `;
 
-const Welcome = () => {
+const About = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -190,60 +190,62 @@ const Welcome = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const features = [
+  const expertise = [
     {
-      icon: '🎯',
-      title: 'Strategic Consulting',
-      description: 'Comprehensive business strategy development and implementation with proven methodologies that drive sustainable growth and competitive advantage.'
+      icon: '🎓',
+      title: 'Academic Excellence',
+      description: 'PhD in advanced data science with extensive research in predictive analytics and strategic business optimization.'
     },
     {
-      icon: '🚀',
-      title: 'Digital Transformation',
-      description: 'End-to-end digital transformation solutions that modernize operations, enhance efficiency, and unlock new opportunities.'
-    },
-    {
-      icon: '📈',
-      title: 'Data Analytics & Insights',
-      description: 'Advanced data analytics and business intelligence solutions that transform raw data into actionable strategic insights.'
-    },
-    {
-      icon: '💡',
-      title: 'Innovation Consulting',
-      description: 'Innovation strategies and implementation frameworks that foster creative thinking and drive breakthrough solutions.'
-    },
-    {
-      icon: '⚡',
-      title: 'Process Optimization',
-      description: 'Business process re-engineering and optimization that eliminates inefficiencies and maximizes operational excellence.'
+      icon: '💼',
+      title: 'Industry Experience',
+      description: 'Over 15 years of hands-on consulting experience across Fortune 500 companies and emerging enterprises.'
     },
     {
       icon: '🏆',
-      title: 'Change Management',
-      description: 'Comprehensive change management programs that ensure successful organizational transformation and adoption.'
+      title: 'Proven Results',
+      description: 'Track record of delivering measurable results with 98% client satisfaction and 500+ successful projects.'
+    },
+    {
+      icon: '🌟',
+      title: 'Innovation Leadership',
+      description: 'Pioneer in applying advanced analytics and AI-driven solutions to complex business challenges.'
+    },
+    {
+      icon: '🔬',
+      title: 'Research & Development',
+      description: 'Continuous research in emerging technologies and methodologies to stay ahead of industry trends.'
+    },
+    {
+      icon: '🤝',
+      title: 'Partnership Approach',
+      description: 'Collaborative methodology that ensures knowledge transfer and sustainable organizational transformation.'
     }
   ];
 
   return (
     <>
       <Helmet>
-        <title>Rigour Consulting - World-Class Strategic Business Consulting | Excellence in Strategy & Innovation</title>
-        <meta name="description" content="Australia's premier strategic business consulting firm. Expert consulting in digital transformation, business strategy, process optimization, and enterprise solutions. Delivering unmatched consulting excellence with proven methodologies." />
-        <meta name="keywords" content="business consulting, strategic consulting, digital transformation, management consulting, business strategy, process optimization, enterprise solutions, australia consulting, innovation consulting" />
-        <link rel="canonical" href="https://rigourconsulting.com.au/" />
+        <title>About Us - Rigour Consulting | Meet Our Expert Team</title>
+        <meta name="description" content="Learn about Rigour Consulting's founder Dr. Joseph N. Njiru, PhD, and our commitment to delivering world-class strategic business consulting solutions across Australia." />
+        <meta name="keywords" content="about rigour consulting, dr joseph njiru, business consulting expert, strategic consulting team, consulting founder, australia consulting" />
+        <link rel="canonical" href="https://rigourconsulting.com.au/about" />
       </Helmet>
       
-      <WelcomeContainer>
+      <AboutContainer>
         <HeroSection>
-          <HeroTitle>💼 Rigour Consulting</HeroTitle>
-          <HeroSubtitle>Excellence in Strategy, Innovation & Digital Transformation</HeroSubtitle>
+          <HeroTitle>👨‍💼 About Rigour Consulting</HeroTitle>
+          <HeroSubtitle>Leading Australia's Business Transformation</HeroSubtitle>
           <HeroDescription>
-            Australia's premier strategic business consulting firm delivering world-class solutions 
-            in digital transformation, business strategy, and enterprise optimization. 
-            Partner with us to unlock your organization's full potential.
+            Founded by Dr. Joseph N. Njiru, PhD, Rigour Consulting brings world-class expertise 
+            in strategic business consulting, digital transformation, and advanced analytics. 
+            Our mission is to partner with organizations to unlock their full potential 
+            through innovative solutions and proven methodologies.
           </HeroDescription>
           
           <CreatorInfo>
-            <p>Founded by <strong>Dr. Joseph N. Njiru, PhD</strong></p>
+            <p><strong>Founder & Principal Consultant</strong></p>
+            <p><strong>Dr. Joseph N. Njiru, PhD</strong></p>
             <p>M PredAnylt (Data Science), MEd, GD Stat, GC HigherEd, GC-GEOSPI</p>
           </CreatorInfo>
           
@@ -252,10 +254,6 @@ const Welcome = () => {
               <span>🎯</span>
               Our Services
             </PrimaryButton>
-            <CTAButton to="/about">
-              <span>💼</span>
-              About Us
-            </CTAButton>
             <CTAButton to="/contact">
               <span>📞</span>
               Contact Us
@@ -264,12 +262,12 @@ const Welcome = () => {
           
           <StatsBar>
             <StatItem>
-              <span className="stat-number">500+</span>
-              <div className="stat-label">Successful Projects</div>
-            </StatItem>
-            <StatItem>
               <span className="stat-number">15+</span>
               <div className="stat-label">Years Experience</div>
+            </StatItem>
+            <StatItem>
+              <span className="stat-number">500+</span>
+              <div className="stat-label">Successful Projects</div>
             </StatItem>
             <StatItem>
               <span className="stat-number">98%</span>
@@ -283,17 +281,17 @@ const Welcome = () => {
         </HeroSection>
 
         <FeaturesGrid>
-          {features.map((feature, index) => (
+          {expertise.map((item, index) => (
             <FeatureCard key={index}>
-              <FeatureIcon>{feature.icon}</FeatureIcon>
-              <FeatureTitle>{feature.title}</FeatureTitle>
-              <FeatureDescription>{feature.description}</FeatureDescription>
+              <FeatureIcon>{item.icon}</FeatureIcon>
+              <FeatureTitle>{item.title}</FeatureTitle>
+              <FeatureDescription>{item.description}</FeatureDescription>
             </FeatureCard>
           ))}
         </FeaturesGrid>
-      </WelcomeContainer>
+      </AboutContainer>
     </>
   );
 };
 
-export default Welcome;
+export default About;
